@@ -8,6 +8,7 @@ import EventDetails from './pages/EventDetails';
 import AdminPage from './pages/AdminPage';
 import RegistrationPage from './pages/RegistrationPage';
 import HackathonPage from './pages/HackathonPage';
+import ReviewPage from './pages/ReviewPage';
 import './index.css';
 import pdoxLogo from './assets/pdox.png';
 const ScrollToTop = () => {
@@ -47,7 +48,7 @@ function App() {
         setIsLoading(false);
         sessionStorage.setItem('paradoxLoaded', 'true');
       }, 500); // Wait for fade out
-    }, 1500); // 1.5s total load time
+    }, 3000); // 3s total load time
 
     return () => clearTimeout(timer);
   }, [isLoading]);
@@ -61,21 +62,12 @@ function App() {
             fadeOut ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          {/* Minimalist Glowing Ring & Logo */}
-          <div className="relative flex items-center justify-center mb-8">
-            <div className="absolute w-32 h-32 rounded-full border-t-2 border-l-2 border-[var(--color-primary)] animate-spin" style={{ animationDuration: '1.5s' }}></div>
-            <div className="absolute w-32 h-32 rounded-full border-b-2 border-r-2 border-[var(--color-primary)]/20 animate-spin" style={{ animationDuration: '3s', animationDirection: 'reverse' }}></div>
-            <img 
-              src={pdoxLogo} 
-              alt="Paradox Logo" 
-              className="w-16 h-16 relative z-10 animate-[spin_3s_linear_infinite] drop-shadow-[0_0_10px_rgba(255,51,0,0.8)]"
-            />
-          </div>
-
-          {/* Simple Clean Text */}
-          <div className="flex flex-col items-center gap-2">
-            <span className="font-sans font-bold text-white tracking-[0.3em] text-sm uppercase">Paradox 2026</span>
-            <span className="text-[var(--color-primary)] text-[10px] tracking-widest font-semibold uppercase animate-pulse">Initializing System...</span>
+          {/* Minimalist Loading Line & Text */}
+          <div className="flex flex-col items-center gap-4 w-64 max-w-full px-4">
+            <span className="font-sans font-bold text-white tracking-[0.3em] text-2xl uppercase">Paradox 26</span>
+            <div className="w-full h-[2px] bg-gray-800 rounded overflow-hidden">
+              <div className="h-full bg-[var(--color-primary)] animate-loading-progress"></div>
+            </div>
           </div>
         </div>
       )}
@@ -108,6 +100,7 @@ function App() {
         <Route path="/events/:eventId" element={<EventDetails />} />
         <Route path="/register/:eventId" element={<RegistrationPage />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/review/:eventId" element={<ReviewPage />} />
       </Routes>
 
       <Footer />

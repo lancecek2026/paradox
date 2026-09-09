@@ -1,26 +1,27 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Calendar, Clock, MapPin, Trophy, Phone, ArrowLeft, ArrowRight } from 'lucide-react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Calendar, Clock, MapPin, Trophy, Phone, CheckCircle, XCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { db } from '../firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 
 import { EVENTS_BY_ID } from '../data/eventsData';
 import GuidelinesModal from '../components/GuidelinesModal';
 
-const EventDetails = () => {
+const ReviewPage = () => {
   const { eventId } = useParams();
+  const navigate = useNavigate();
   const [event, setEvent] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [showGuidelines, setShowGuidelines] = useState(false);
+  const [isUpdating, setIsUpdating] = useState(false);
 
   useEffect(() => {
     const fetchEvent = async () => {
       try {
         let eventData = EVENTS_BY_ID[eventId] || null;
 
-        // Check Firebase for custom overrides or new custom events
         const docRef = doc(db, "customEvents", eventId);
         const docSnap = await getDoc(docRef);
 
@@ -28,14 +29,16 @@ const EventDetails = () => {
           eventData = eventData ? { ...eventData, ...docSnap.data() } : docSnap.data();
         }
 
-        if (!eventData && EVENTS_BY_ID['c-challenge']) {
-          eventData = EVENTS_BY_ID['c-challenge'];
+        if (!eventData) {
+          console.error("Event not found in Firebase or local data.");
+          setEvent(null);
+          return;
         }
 
         setEvent(eventData);
       } catch (error) {
         console.error("Error fetching event details:", error);
-        setEvent(EVENTS_BY_ID[eventId] || EVENTS_BY_ID['c-challenge'] || null);
+        setEvent(null);
       } finally {
         setIsLoading(false);
       }
@@ -44,7 +47,25 @@ const EventDetails = () => {
     fetchEvent();
   }, [eventId]);
 
-  if (isLoading || !event) {
+  const handleApproval = async (status) => {
+    if (isUpdating) return;
+    setIsUpdating(true);
+    try {
+      const docRef = doc(db, "customEvents", eventId);
+      await updateDoc(docRef, {
+        approvalStatus: status
+      });
+      alert(`Event has been successfully ${status}!`);
+      navigate('/');
+    } catch (error) {
+      console.error(`Error updating event status to ${status}:`, error);
+      alert("Failed to update status. Please try again.");
+    } finally {
+      setIsUpdating(false);
+    }
+  };
+
+  if (isLoading) {
     return (
       <div className="w-full min-h-screen bg-[var(--color-bg-dark)] flex items-center justify-center">
         <div className="w-8 h-8 border-4 border-white/20 border-t-[var(--color-primary)] rounded-full animate-spin"></div>
@@ -52,30 +73,33 @@ const EventDetails = () => {
     );
   }
 
+  if (!event) {
+    return (
+      <div className="w-full min-h-screen bg-[var(--color-bg-dark)] flex flex-col items-center justify-center text-center p-6">
+        <XCircle className="w-16 h-16 text-red-500 mb-4" />
+        <h2 className="text-2xl font-bold text-white mb-2">Event Not Found</h2>
+        <p className="text-gray-400 max-w-md">The event ID "{eventId}" could not be found. Make sure you clicked the exact link from your email.</p>
+        <button onClick={() => navigate('/admin')} className="mt-6 px-6 py-2 bg-[var(--color-primary)] rounded-full text-white font-bold text-sm">Return to Admin</button>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full min-h-screen bg-[var(--color-bg-dark)] pt-32 pb-24 relative overflow-hidden">
       
-      {/* Dynamic Ambient Glow based on page */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(255,51,0,0.05)_0%,transparent_70%)] pointer-events-none rounded-full blur-[30px] z-0 "></div>
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
-        {/* Header / Breadcrumbs */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="flex flex-col items-start mb-6"
         >
-          <Link to="/#events" className="flex items-center gap-2 text-gray-500 hover:text-[var(--color-primary)] text-[10px] font-bold uppercase tracking-widest transition-colors mb-4 group">
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> BACK TO EVENTS
-          </Link>
-          <div className="flex items-center gap-3 mb-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]"></span>
-            <span className="text-[var(--color-primary)] text-xs font-bold tracking-widest uppercase">{event.categoryLabel || event.category || 'EVENT'}</span>
-            <span className="text-white/20 text-xs">•</span>
-            <span className="text-gray-400 text-xs font-semibold tracking-widest uppercase">{event.type}</span>
+          <div className="flex items-center gap-3 mb-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-bold tracking-widest uppercase">
+            Coordinator Review Mode
           </div>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tight text-white uppercase leading-none mb-3">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tight text-white uppercase leading-none mb-3 mt-4">
             {event.title}
           </h1>
           {event.subtitle && (
@@ -90,24 +114,20 @@ const EventDetails = () => {
           )}
         </motion.div>
 
-        {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
-          {/* Left Column - Dynamic Poster */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
             className="lg:col-span-7 flex flex-col"
           >
-            {/* Ultra-premium Ambilight Poster Container - Fits perfectly to image ratio */}
             <div className="relative w-fit h-fit mx-auto flex items-center justify-center group">
               <div 
                 className="absolute inset-4 opacity-40 blur-[60px] md:blur-[80px] scale-110 group-hover:opacity-60 transition-opacity duration-700" 
                 style={{ backgroundImage: `url(${event.posterUrl?.replace(/drive\.google\.com\/file\/d\/([a-zA-Z0-9-_]+)\/view.*/, 'lh3.googleusercontent.com/d/$1').replace(/drive\.google\.com\/uc\?id=([a-zA-Z0-9-_]+)/, 'lh3.googleusercontent.com/d/$1').replace(/drive\.google\.com\/thumbnail\?id=([a-zA-Z0-9-_]+).*/, 'lh3.googleusercontent.com/d/$1')})`, backgroundPosition: 'center', backgroundSize: 'cover' }}
               ></div>
               
-              {/* Loading Spinner */}
               {!isImageLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center z-20 bg-black/20 backdrop-blur-sm rounded-[32px]">
                   <div className="w-10 h-10 border-4 border-white/10 border-t-[var(--color-primary)] rounded-full animate-spin"></div>
@@ -118,13 +138,12 @@ const EventDetails = () => {
                 src={event.posterUrl?.replace(/drive\.google\.com\/file\/d\/([a-zA-Z0-9-_]+)\/view.*/, 'lh3.googleusercontent.com/d/$1').replace(/drive\.google\.com\/uc\?id=([a-zA-Z0-9-_]+)/, 'lh3.googleusercontent.com/d/$1').replace(/drive\.google\.com\/thumbnail\?id=([a-zA-Z0-9-_]+).*/, 'lh3.googleusercontent.com/d/$1')}
                 alt={event.title}
                 onLoad={() => setIsImageLoaded(true)}
-                onError={() => setIsImageLoaded(true)}
+                onError={() => setIsImageLoaded(true)} // Stop spinning if image fails
                 className={`relative z-10 w-auto h-auto max-w-full max-h-[400px] md:max-h-[500px] lg:max-h-[550px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-xl sm:rounded-2xl lg:rounded-[32px] transition-all duration-700 ${isImageLoaded ? 'opacity-100' : 'opacity-0 scale-95'}`}
               />
             </div>
           </motion.div>
 
-          {/* Right Column - Sleek Details */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -132,7 +151,6 @@ const EventDetails = () => {
             className="lg:col-span-5 flex flex-col justify-between"
           >
             
-            {/* Details List */}
             <div className="flex flex-col gap-6 bg-white/[0.02] border border-white/5 rounded-[32px] p-6 lg:p-8 backdrop-blur-xl flex-1">
               
               <div className="flex flex-col gap-5">
@@ -177,15 +195,13 @@ const EventDetails = () => {
                 </div>
               </div>
 
-              {/* Divider */}
               <div className="w-full h-px bg-white/5 my-2"></div>
 
-              {/* Event Coordinators */}
               <div>
                 <h4 className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-3">Coordinators</h4>
                 <div className="flex flex-wrap gap-3">
                   {(event.contacts || []).map((contact, idx) => (
-                    <a key={idx} href={`tel:${contact.phone}`} className="flex items-center gap-3 bg-[#111111] hover:bg-[#1a1a1a] transition-colors rounded-full pl-2 pr-4 py-2 border border-white/5 group shadow-sm">
+                    <div key={idx} className="flex items-center gap-3 bg-[#111111] transition-colors rounded-full pl-2 pr-4 py-2 border border-white/5 group shadow-sm">
                       <div className="w-8 h-8 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center shrink-0">
                         <Phone className="w-3.5 h-3.5 text-[var(--color-primary)] group-hover:scale-110 transition-transform" />
                       </div>
@@ -193,30 +209,46 @@ const EventDetails = () => {
                         <span className="text-white text-[11px] font-bold tracking-wider leading-none mb-1">{contact.name}</span>
                         <span className="text-gray-400 text-[10px] font-medium leading-none">{contact.phone}</span>
                       </div>
-                    </a>
+                    </div>
                   ))}
                 </div>
               </div>
 
-              {/* Action Buttons Integrated into card bottom */}
-              <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4">
-                {event.registrationClosed ? (
-                  <div className="flex-1 bg-white/10 text-white/50 cursor-not-allowed transition-all rounded-full px-6 py-3.5 font-bold text-sm tracking-wide text-center flex items-center justify-center">
-                    Registration Closed
-                  </div>
-                ) : (
-                  <a href={event.registrationLink || '#'} target="_blank" rel="noopener noreferrer" className="flex-1 bg-white hover:bg-gray-200 text-[#070707] transition-all rounded-full px-6 py-3.5 font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:-translate-y-0.5 flex items-center justify-center gap-2 group">
-                    Register Now
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                )}
+              <div className="flex justify-center mt-2">
                 <button 
                   type="button"
                   onClick={() => setShowGuidelines(true)}
-                  className="flex-1 bg-transparent hover:bg-white/10 border border-white/20 hover:border-white/40 text-white transition-all rounded-full px-6 py-3.5 font-bold text-sm tracking-wide flex items-center justify-center cursor-pointer"
+                  className="w-full bg-transparent hover:bg-white/10 border border-white/20 hover:border-white/40 text-white transition-all rounded-full px-6 py-2.5 font-bold text-sm tracking-wide flex items-center justify-center cursor-pointer"
                 >
-                  Guidelines
+                  View Guidelines
                 </button>
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-4 text-center">Coordinator Verification</h4>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button 
+                    type="button"
+                    onClick={() => handleApproval('approved')}
+                    disabled={isUpdating}
+                    className="flex-1 bg-green-600 hover:bg-green-500 text-white transition-all rounded-full px-6 py-3.5 font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(22,163,74,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                  >
+                    <CheckCircle className="w-5 h-5" /> Approve Event
+                  </button>
+                  <button 
+                    type="button"
+                    onClick={() => handleApproval('rejected')}
+                    disabled={isUpdating}
+                    className="flex-1 bg-red-600 hover:bg-red-500 text-white transition-all rounded-full px-6 py-3.5 font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                  >
+                    <XCircle className="w-5 h-5" /> Reject Event
+                  </button>
+                </div>
+                {event.approvalStatus && (
+                  <p className="text-center text-xs text-gray-400 mt-3 font-semibold uppercase tracking-widest">
+                    Current Status: <span className={event.approvalStatus === 'approved' ? 'text-green-400' : event.approvalStatus === 'rejected' ? 'text-red-400' : 'text-amber-400'}>{event.approvalStatus}</span>
+                  </p>
+                )}
               </div>
 
             </div>
@@ -224,7 +256,6 @@ const EventDetails = () => {
         </div>
       </div>
 
-      {/* Guidelines Modal */}
       <GuidelinesModal
         isOpen={showGuidelines}
         onClose={() => setShowGuidelines(false)}
@@ -234,4 +265,4 @@ const EventDetails = () => {
   );
 };
 
-export default EventDetails;
+export default ReviewPage;

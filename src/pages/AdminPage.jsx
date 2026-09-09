@@ -374,7 +374,13 @@ const AdminPage = () => {
           
           const data = await response.json();
           if (data.success) {
-            finalPosterUrl = data.url;
+            let driveUrl = data.url;
+            const match = driveUrl.match(/\/d\/([a-zA-Z0-9-_]+)/);
+            if (match && match[1]) {
+              finalPosterUrl = `https://lh3.googleusercontent.com/d/${match[1]}`;
+            } else {
+              finalPosterUrl = driveUrl;
+            }
           } else {
             throw new Error(data.error || 'Google Drive upload failed');
           }
@@ -391,6 +397,8 @@ const AdminPage = () => {
         categoryLabel: categoryLabels[formData.category] || 'Event',
         posterUrl: finalPosterUrl,
         status: formData.registrationClosed ? 'Registration Closed' : 'Register Now',
+        approvalStatus: 'pending', // All edits require re-approval
+        deleted: false,
         updatedAt: new Date().toISOString()
       };
 
@@ -400,6 +408,37 @@ const AdminPage = () => {
         6000,
         "Database save timed out. Your connection to Firebase might be blocked!"
       );
+
+      // Trigger email for new events AND edits
+      try {
+        const reviewLink = `${window.location.origin}/review/${targetId}`;
+        const emailPayload = {
+          type: 'email',
+          to: 'edwinjijo500@gmail.com', // Replace with the actual coordinator's email address
+          subject: editingEventId ? `Event Edited Pending Approval: ${formData.title}` : `New Event Pending Approval: ${formData.title}`,
+          body: editingEventId 
+            ? `The event "${formData.title}" has been modified and requires your re-approval.\n\nReview it here: ${reviewLink}`
+            : `A new event "${formData.title}" has been submitted and is pending your approval.\n\nReview it here: ${reviewLink}`
+        };
+          
+          // Try sending using the Google Apps Script endpoint.
+          fetch('https://script.google.com/macros/s/AKfycbwE-63_6k2oBHtQB65zzTxw-dxeXlses0FowN2nf9VzeQGtZKw-sgK73abpENxdNO-j/exec', {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(emailPayload)
+          })
+          .then(res => res.json())
+          .then(data => {
+            console.log("Email response:", data);
+            if (!data.success) throw new Error("Apps Script returned success: false");
+          })
+          .catch(e => {
+            console.warn("Email trigger failed, using mailto fallback:", e);
+            window.open(`mailto:edwinjijo500@gmail.com?subject=${encodeURIComponent(emailPayload.subject)}&body=${encodeURIComponent(emailPayload.body)}`, '_blank');
+          });
+        } catch (e) {
+          console.error("Failed to send approval email", e);
+        }
 
       const actionText = editingEventId ? "updated" : "added";
       setStatusMessage({ type: 'success', text: `Event "${formData.title}" ${actionText} successfully!` });
@@ -1007,8 +1046,18 @@ const AdminPage = () => {
                         {event.categoryLabel || event.category || 'EVENT'}
                       </span>
                       <div className="flex items-center gap-1.5">
-                        {event.registrationClosed && (
+                        {event.approvalStatus === 'pending' && (
                           <span className="text-[10px] font-bold bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-full text-amber-400 uppercase tracking-wider">
+                            Pending
+                          </span>
+                        )}
+                        {event.approvalStatus === 'rejected' && (
+                          <span className="text-[10px] font-bold bg-red-500/10 border border-red-500/20 px-2 py-0.5 rounded-full text-red-400 uppercase tracking-wider">
+                            Rejected
+                          </span>
+                        )}
+                        {event.registrationClosed && (
+                          <span className="text-[10px] font-bold bg-gray-500/10 border border-gray-500/20 px-2 py-0.5 rounded-full text-gray-400 uppercase tracking-wider">
                             Closed
                           </span>
                         )}

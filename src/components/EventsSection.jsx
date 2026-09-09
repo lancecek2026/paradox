@@ -111,7 +111,8 @@ const EventsSection = () => {
       for (const baseEvent of EVENTS) {
         if (customEventsMap.has(baseEvent.id)) {
           const custom = customEventsMap.get(baseEvent.id);
-          if (!custom.deleted) {
+          const isApproved = !custom.approvalStatus || custom.approvalStatus === 'approved';
+          if (!custom.deleted && isApproved) {
             merged.push({ ...baseEvent, ...custom });
           }
           processedIds.add(baseEvent.id);
@@ -122,7 +123,8 @@ const EventsSection = () => {
 
       // Prepend newly added custom events
       for (const [id, custom] of customEventsMap.entries()) {
-        if (!processedIds.has(id) && !custom.deleted) {
+        const isApproved = !custom.approvalStatus || custom.approvalStatus === 'approved';
+        if (!processedIds.has(id) && !custom.deleted && isApproved) {
           merged.unshift(custom);
         }
       }
