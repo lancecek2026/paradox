@@ -414,7 +414,7 @@ const AdminPage = () => {
         const reviewLink = `${window.location.origin}/review/${targetId}`;
         const emailPayload = {
           type: 'email',
-          to: 'edwinjijo500@gmail.com', // Replace with the actual coordinator's email address
+          to: 'amilmether37@gmail.com', // Coordinator's email address
           subject: editingEventId ? `Event Edited Pending Approval: ${formData.title}` : `New Event Pending Approval: ${formData.title}`,
           body: editingEventId 
             ? `The event "${formData.title}" has been modified and requires your re-approval.\n\nReview it here: ${reviewLink}`
@@ -434,7 +434,7 @@ const AdminPage = () => {
           })
           .catch(e => {
             console.warn("Email trigger failed, using mailto fallback:", e);
-            window.open(`mailto:edwinjijo500@gmail.com?subject=${encodeURIComponent(emailPayload.subject)}&body=${encodeURIComponent(emailPayload.body)}`, '_blank');
+            window.open(`mailto:amilmether37@gmail.com?subject=${encodeURIComponent(emailPayload.subject)}&body=${encodeURIComponent(emailPayload.body)}`, '_blank');
           });
         } catch (e) {
           console.error("Failed to send approval email", e);
