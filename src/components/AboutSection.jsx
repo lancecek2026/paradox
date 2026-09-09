@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import aboutPoster from '../assets/about-poster.jpg';
+import aboutPoster from '../assets/about-poster.jpeg';
 import e1 from '../assets/e1.jpeg';
 import e2 from '../assets/e2.jpeg';
 import e3 from '../assets/e3.jpeg';

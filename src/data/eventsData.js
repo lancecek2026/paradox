@@ -1,6 +1,6 @@
 export const CATEGORIES = [
   { id: 'all', label: 'All Events', icon: 'Layers' },
-  { id: 'coding', label: 'Coding Events', icon: 'Code2' },
+  { id: 'coding', label: 'Technical Events', icon: 'Code2' },
   { id: 'esports', label: 'eSports Events', icon: 'Gamepad2' },
   { id: 'general', label: 'General Events', icon: 'Sparkles' },
 ];
@@ -97,12 +97,19 @@ export const EVENTS = [
     status: 'Register Now',
     registrationLink: '',
     description: 'Design and build stunning, responsive, and functional web applications within the time limit.',
-    guidelines: [
-      'Team size: 1 to 2 members.',
-      'Theme and assets will be revealed at the commencement of the event.',
-      'Allowed technologies: HTML, CSS, JavaScript, React, TailwindCSS.',
-      'Submissions evaluated on UI/UX responsiveness, innovation, and code cleanliness.'
-    ],
+   guidelines: [
+  'Each team must consist of 1–3 members.',
+  'The development time is limited to 2.5 hours.',
+  'The problem statement will be provided at the start of the event.',
+  'Development is limited to the frontend using HTML, CSS, JavaScript, and JavaScript libraries.',
+  'Internet access is strictly prohibited throughout the event.',
+  'Pre-built projects and plagiarism are strictly prohibited.',
+  'The website must be fully responsive.',
+  'A review and evaluation period of 30 minutes will be allotted after development.',
+  'Evaluation will be based on design, creativity, functionality, and code quality.',
+  'Each team must bring their own laptop for the event.',
+  'The organizers’ decision will be final and binding.'
+],
     date: '7/10/2025',
     time: '10:30 AM - 01:30 PM',
     venue: 'Web Lab / CSLH4',
@@ -178,11 +185,20 @@ export const EVENTS = [
     registrationLink: '',
     description: 'Dominate the virtual pitch in 1v1 tactical football showdowns. Prove your squad management and stick skills.',
     guidelines: [
-      'Platform: Mobile device (participants must bring their own phones with eFootball updated).',
-      'Tournament format: Single elimination knockout rounds.',
-      'Match duration: 10 minutes regular time (extra time and penalties enabled).',
-      'Custom team ratings must adhere to tournament guidelines set by coordinators.'
-    ],
+  'Match duration is 8 minutes.',
+  'All players must maintain good player condition.',
+  'A maximum of 6 substitutions are allowed.',
+  'Extra Time and Penalty Shootouts will be enabled.',
+  'A maximum of 5 Epic, Showtime, or Big Time players are allowed.',
+  'Team strength must not exceed 3150.',
+  'Smart Assist must be turned OFF.',
+  'If the match is drawn after normal time, Extra Time will be played. If the match remains tied after Extra Time, the winner will be decided by a Penalty Shootout.',
+  'If a player fails to appear before the match deadline, the opponent will be awarded a 3–0 walkover victory.',
+  'If a player disconnects during the first half, the match will be restarted.',
+  'If a player disconnects during the second half, the disconnected player will forfeit the match and lose 3–0.',
+  'All players must strictly follow the above rules.',
+  'The organizer’s decision will be final and binding in case of any dispute.'
+],
     date: '7/10/2025',
     time: '10:00 AM - 02:00 PM',
     venue: 'Gaming Arena / Seminar Hall',
@@ -609,28 +625,30 @@ export const EVENTS = [
 export const HACKATHON_EVENT = {
   id: 'hackathon',
   number: 0,
-  title: 'PARADOX HACKATHON 2026',
-  subtitle: '8-Hour Flagship Hackathon',
+  title: 'PARANOVA',
+  subtitle: '6-HOUR INTER-COLLEGE HACKATHON',
   category: 'coding',
   categoryLabel: 'Flagship Hackathon',
   type: 'Hackathon',
   status: 'Register Now',
-    registrationLink: '',
-  description: 'An intense 8-hour non-stop hackathon challenging creators, developers, and designers to build transformative prototypes tackling real-world problems.',
+  registrationLink: '',
+  description: 'Paranova is a 6-hour offline inter-college software hackathon. Develop innovative software solutions to real-world problems related to Sustainable Development Goals (SDGs).',
   guidelines: [
-    'Team size: 2 to 4 members from any recognized institution.',
-    'All code, assets, and design work must be crafted during the 8-hour hackathon duration.',
-    'Participants must bring their own laptops, chargers, and development kits.',
-    'Teams are required to maintain a public GitHub repository with regular commits.',
-    'Use of public open-source libraries and APIs is allowed with proper credit.',
-    'Evaluation is based on Innovation, Technical Depth, UI/UX Design, Feasibility, and the Final Pitch.'
+    'Team size: 1 to 4 members. Inter-college teams allowed.',
+    'Only software projects are allowed. Hardware projects are not permitted.',
+    'Registration and abstract submission are completely FREE.',
+    'Abstract domains: Affordable & Clean Energy, Quality Education, Good Health & Well-Being.',
+    'Only 15 teams will be shortlisted based on abstract evaluation.',
+    'Shortlisted teams must pay a mandatory ₹50 per participant participation fee (covers refreshments).',
+    'Three final problem statements will be revealed on the event day. Teams can choose ANY challenge regardless of their abstract domain.',
+    'Development time is strictly 6 hours. Evaluation through individual project review (no formal pitching).'
   ],
-  date: 'September 17, 2026',
-  time: '08:30 AM - 04:00 PM',
-  venue: 'College of Engineering Kidangoor',
+  date: '17 September 2026',
+  time: '09:00 AM - 04:00 PM',
+  venue: 'ASAP Hall, College of Engineering, Kidangoor',
   prizePool: '10000',
-  fee: '₹29 / member',
-  regFee: '₹29 / member',
+  fee: 'Free Registration (₹50 if shortlisted)',
+  regFee: 'Free Registration (₹50 if shortlisted)',
   posterUrl: 'https://paradox25.netlify.app/_next/image?url=%2Fposters%2Fcchallenge.png&w=1920&q=75',
   contacts: [
       { name: 'S Sreenandan', phone: '+91 9567528609' },
@@ -638,10 +656,10 @@ export const HACKATHON_EVENT = {
     ],
   customFields: [
     { id: 'teamName', label: 'Team Name', type: 'text', required: true },
-    { id: 'teamSize', label: 'Team Size (2-4)', type: 'select', options: '2 Members, 3 Members, 4 Members', required: true },
-    { id: 'memberDetails', label: 'Team Members (Names, Emails & Phone Numbers)', type: 'text', required: true },
-    { id: 'trackPreference', label: 'Selected Track', type: 'select', options: 'Web & Mobile Apps, AI & Machine Learning, Smart Campus & IoT, Open Innovation', required: true },
-    { id: 'githubProfile', label: 'Team Lead GitHub / Portfolio URL', type: 'text', required: false }
+    { id: 'teamSize', label: 'Team Size (1-4)', type: 'select', options: '1 Member, 2 Members, 3 Members, 4 Members', required: true },
+    { id: 'memberDetails', label: 'Team Members (Names, Emails, Phone Numbers & Colleges)', type: 'text', required: true },
+    { id: 'abstractDomain', label: 'Abstract Submission Domain', type: 'select', options: 'Affordable & Clean Energy, Quality Education, Good Health & Well-Being', required: true },
+    { id: 'abstractFile', label: 'Abstract Link (Google Doc / Drive Link with View Access)', type: 'text', required: true }
   ]
 };
 

@@ -33,55 +33,47 @@ import Countdown from '../components/Countdown';
 
 const TRACKS = [
   {
-    id: 'health-wellbeing',
-    icon: Activity,
-    title: 'Good Health & Well-being',
-    
-    description: 'Ideas improving healthcare access and wellness — telemedicine, mental health tools, diagnostics, or health awareness platforms.'
+    id: 'clean-energy',
+    icon: Factory,
+    title: 'Affordable & Clean Energy',
+    description: 'Innovative software solutions that promote renewable energy, improve energy efficiency, and enable smarter energy management for a sustainable future.'
   },
   {
     id: 'quality-education',
     icon: BookOpen,
     title: 'Quality Education',
-    
-    description: 'Tech solutions that make learning more accessible, effective, or inclusive — ed-tech platforms, skill-building tools, or accessibility-focused learning apps.'
+    description: 'Technology-driven solutions that improve access to education, enhance learning experiences, and make education more inclusive and effective.'
   },
   {
-    id: 'climate-action',
-    icon: Globe,
-    title: 'Climate Action',
- 
-    description: 'Projects tackling climate impact — carbon tracking, climate-resilient agriculture, disaster early-warning, or environmental awareness tools.'
-  },
-  {
-    id: 'industry-innovation',
-    icon: Factory,
-    title: 'Industry, Innovation & Infrastructure',
-    
-    description: 'Solutions around smart infrastructure, industrial efficiency, or innovative tech applications — broad enough to include IoT, automation, or digital infrastructure ideas.'
+    id: 'health-wellbeing',
+    icon: Activity,
+    title: 'Good Health & Well-Being',
+    description: 'Software solutions that improve healthcare accessibility, support healthy lifestyles, enable better health management, and enhance overall well-being.'
   }
 ];
 
 const TIMELINE = [
-  { time: '08:30 AM - 09:00 AM', title: 'Registration', desc: 'Reporting, team desk allotment, Wi-Fi configuration, and environment setup.' },
-  { time: '09:00 AM - 09:15 AM', title: 'Kickoff', desc: 'Rules explanation, team check, and problem statement reminder.' },
-  { time: '09:15 AM - 12:30 PM', title: 'Build Block 1 (~3h 15m)', desc: 'First development sprint commences.' },
-  { time: '12:30 PM - 01:15 PM', title: 'Lunch Break', desc: 'Lunch and informal networking.' },
-  { time: '01:15 PM - 02:45 PM', title: 'Build Block 2 & Judge Review', desc: 'Development continues along with preliminary judge review.' },
-  { time: '02:45 PM - 03:05 PM', title: 'Evening Snacks & Tea', desc: 'Tea and refreshments break.' },
-  { time: '03:05 PM - 03:40 PM', title: 'Final Touches & Score Finalization', desc: 'Final project polish while judges finalize scores.' },
-  { time: '03:40 PM - 04:00 PM', title: 'Results & Closing', desc: 'Announcement of winners and closing ceremony.' }
+  { time: '08:30 AM', title: 'Mandatory Reporting & Check-in', desc: 'All shortlisted team members must report to the venue.' },
+  { time: '08:30 AM - 09:00 AM', title: 'Verification & Team Settlement', desc: 'Check-in, verification and seating arrangements.' },
+  { time: '09:00 AM - 09:15 AM', title: 'Opening Briefing + Challenge Reveal', desc: 'Briefing and revelation of the final problem statements.' },
+  { time: '09:15 AM', title: 'Hackathon Begins', desc: 'Teams choose their challenge and start development.' },
+  { time: '12:30 PM - 01:15 PM', title: 'Lunch Break*', desc: 'Lunch break (Optional lunch available at additional cost).' },
+  { time: '01:15 PM - 03:00 PM', title: 'Development Ends / Final Submission', desc: 'Final development sprint and submission.' },
+  { time: '03:00 PM - 03:15 PM', title: 'Tea Break', desc: 'Short break for refreshments.' },
+  { time: '03:15 PM - 04:00 PM', title: 'Individual Project Review', desc: 'Judges interact with teams to review working prototypes (No formal pitch).' },
+  { time: '04:00 PM', title: 'Hackathon Concludes', desc: 'End of the event.' }
 ];
 
 const RULES = [
-  'Team size must be between 2 to 4 members from any recognized institution.',
-  'All code, assets, UI layouts, and prototypes must be developed during the 8-hour hackathon.',
-  'Participants must bring their own laptops, chargers, and any specialized development equipment.',
-  'Open-source libraries, frameworks, and public APIs are permitted with appropriate attribution.',
-  'Every team must maintain an active public GitHub repository with periodic commits during the sprint.',
-  'Judging criteria: Innovation (25%), Technical Depth (25%), UI/UX Execution (20%), Feasibility (15%), and Pitch (15%).',
-  'Hardware-based projects are not permitted. Projects must be software-only.'
-
+  'Team size: 1–4 members. Inter-college teams are allowed. Participants can only be part of one team.',
+  'Registration and abstract submission are completely FREE.',
+  'Only up to 15 teams will be shortlisted based on abstract evaluation.',
+  'Shortlisted teams must pay a mandatory ₹50 per participant charge (covers refreshments, lunch is separate).',
+  'Only software projects are allowed. Teams may use any software tech, APIs, frameworks, or AI/ML tools.',
+  'Three final challenge statements will be revealed on the day. Teams can choose ANY ONE regardless of their abstract domain.',
+  'A selected challenge cannot be changed once development begins.',
+  'Development time is strictly 6 hours. Teams must be able to demonstrate a working solution.',
+  'No formal presentation or pitching session. Projects are evaluated through direct project review.'
 ];
 
 const HackathonPage = () => {
@@ -191,7 +183,7 @@ const HackathonPage = () => {
             </a>
 
             <a 
-              href="#details" 
+              href="#process" 
               className="flex-1 sm:flex-initial sm:w-auto border border-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 text-[var(--color-primary)] hover:text-white font-sans font-semibold text-sm sm:text-base py-2.5 sm:py-3.5 px-4 sm:px-8 rounded-xl transition-all hover:scale-[1.02] flex items-center justify-center text-center"
             >
               Learn More
@@ -200,6 +192,45 @@ const HackathonPage = () => {
         </div>
 
 
+
+        {/* About Section */}
+        <div id="about" className="scroll-mt-28 mb-20 max-w-5xl mx-auto">
+          <div className="flux-card p-8 sm:p-12 border border-[var(--color-primary)]/20 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-primary)]/5 rounded-full blur-[80px] pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+            
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-badge mb-6">
+                <Sparkles className="w-3.5 h-3.5 text-[var(--color-primary)]" />
+                <span className="text-[11px] font-bold text-gray-300 uppercase tracking-widest">About The Hackathon</span>
+              </div>
+              
+              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6">
+                What is <span className="text-[var(--color-primary)]">Paranova?</span>
+              </h2>
+              
+              <div className="space-y-4 text-gray-300 leading-relaxed text-sm sm:text-base">
+                <p>
+                  Paranova is a 6-hour offline inter-college software hackathon conducted as part of PARADOX 2026. The hackathon challenges participants to develop innovative software solutions to real-world problems related to Sustainable Development Goals (SDGs).
+                </p>
+                
+                <div className="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/10 mt-6">
+                  <div className="mt-1 w-2 h-2 rounded-full bg-[var(--color-primary)] shrink-0"></div>
+                  <p>
+                    Teams will first submit an abstract based on one of the three specified domains. Based on abstract evaluation, <strong className="text-white">up to 15 teams</strong> will be shortlisted for the offline hackathon.
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/10">
+                  <div className="mt-1 w-2 h-2 rounded-full bg-[var(--color-primary)] shrink-0"></div>
+                  <p>
+                    On the hackathon day, three final problem statements will be revealed—one from each domain. Each shortlisted team can <strong className="text-white">choose any one of the three challenges</strong> and develop a solution within the 6-hour development period.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Hackathon Tracks */}
         <div id="tracks" className="scroll-mt-28 mb-20">
@@ -248,80 +279,240 @@ const HackathonPage = () => {
           </div>
         </div>
 
-        {/* Details Section */}
+        {/* Registration & Fee Details */}
+        <div className="scroll-mt-28 mb-20">
+          <div className="max-w-4xl mx-auto flux-card p-8 sm:p-10 relative overflow-hidden">
+            <div className="absolute top-0 right-0 px-4 py-1.5 bg-green-500 text-white text-xs font-bold uppercase tracking-widest rounded-bl-xl shadow-md">
+              Free Registration
+            </div>
+            
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+              Registration & <span className="text-[var(--color-primary)]">Fees</span>
+            </h2>
+            
+            <div className="space-y-4 text-gray-300 leading-relaxed text-sm sm:text-base">
+              <p>
+                <strong className="text-white text-lg">REGISTRATION IS FREE</strong><br />
+                There is no registration fee for applying and submitting your abstract.
+              </p>
+              
+              <div className="p-4 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 rounded-xl my-6">
+                <p className="text-[var(--color-primary)] font-semibold mb-2 flex items-center gap-2">
+                  <AlertCircle className="w-5 h-5" />
+                  Shortlisted Team Fee
+                </p>
+                <p>
+                  However, shortlisted teams are required to pay <strong className="text-white">₹50 per participant</strong>. The ₹50 charge is mandatory for every member of a shortlisted team and covers refreshments provided during the hackathon.
+                </p>
+              </div>
+
+              <p>
+                <strong className="text-white">Lunch:</strong> Lunch is NOT included in this amount. Participants who wish to avail lunch may opt for it separately at an additional charge.
+              </p>
+
+              <div className="flex items-center gap-3 text-amber-400 font-semibold mt-8 pt-6 border-t border-white/10">
+                <Calendar className="w-5 h-5" />
+                <p>Registration Deadline: 14 September 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Hackathon Format / Registration Process */}
+        <div id="process" className="scroll-mt-28 mb-20">
+          <div className="flex flex-col items-center text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-badge mb-3">
+              <Info className="w-3.5 h-3.5 text-[var(--color-primary)]" />
+              <span className="text-[11px] font-bold text-gray-300 uppercase tracking-widest">Process</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              Hackathon <span className="text-[var(--color-primary)]">Format</span>
+            </h2>
+            <p className="text-gray-400 text-sm max-w-xl mt-2">
+              From free registration to the final review, here is how the Paranova Hackathon flows.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {[
+              { num: '01', title: 'REGISTER', desc: 'Register your team for FREE.' },
+              { num: '02', title: 'CHOOSE A DOMAIN', desc: 'Select one of the three domains provided on the website.' },
+              { num: '03', title: 'SUBMIT ABSTRACT', desc: 'Submit an abstract describing your proposed software solution relevant to your selected domain.' },
+              { num: '04', title: 'SHORTLISTING', desc: 'Abstracts will be evaluated and up to 15 teams will be shortlisted.' },
+              { num: '05', title: 'CHALLENGE REVEAL', desc: 'On 17 September, three final problem statements will be revealed at the venue.' },
+              { num: '06', title: 'CHOOSE YOUR CHALLENGE', desc: 'Each shortlisted team can select ANY ONE of the three challenges.' },
+              { num: '07', title: 'BUILD', desc: 'Develop your software solution within 6 hours.' },
+              { num: '08', title: 'REVIEW & EVALUATION', desc: 'Projects will be evaluated through an individual/project review. There will be no formal presentation/pitching session.' }
+            ].map((step, idx) => (
+              <div key={idx} className="flux-card p-6 flex flex-col group relative overflow-hidden">
+                <div className="absolute -right-4 -top-4 text-7xl font-black text-white/[0.03] group-hover:text-[var(--color-primary)]/10 transition-colors pointer-events-none select-none">
+                  {step.num}
+                </div>
+                <div className="text-[var(--color-primary)] font-mono font-bold text-sm mb-2">{step.num}</div>
+                <h3 className="text-white font-bold text-lg mb-2 tracking-wide uppercase">{step.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Abstract Submission & Evaluation */}
+        <div id="abstract" className="scroll-mt-28 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            
+            {/* Abstract Submission */}
+            <div className="flux-card p-8 sm:p-10 flex flex-col h-full border-[var(--color-primary)]/20">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)]">
+                  <BookOpen className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold text-white tracking-wide">
+                  Abstract Submission
+                </h3>
+              </div>
+              
+              <div className="text-gray-300 space-y-5 text-sm sm:text-base flex-1">
+                <p>
+                  <strong>Abstract Guidelines:</strong> Each team must submit ONE abstract based on the domain selected during registration.
+                </p>
+                
+                <div>
+                  <strong className="text-white block mb-2">Recommended abstract structure:</strong>
+                  <ul className="space-y-1.5 ml-1">
+                    {['Project Title', 'Problem Statement', 'Proposed Solution', 'Key Features', 'Target Users / Beneficiaries', 'Expected Impact', 'Technology/Tools (if applicable)'].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-[var(--color-primary)] mt-1 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <p className="inline-block bg-white/5 px-3 py-1.5 rounded-lg text-amber-400 font-semibold border border-white/10">
+                  Abstract Limit: Maximum 250–300 words
+                </p>
+
+                <div className="mt-4 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-200">
+                  <strong className="text-red-400 block mb-1">Deadline: 14 September 2026 — 11:59 PM</strong>
+                  Once the deadline passes, abstract submissions will not be accepted.
+                </div>
+              </div>
+            </div>
+
+            {/* Abstract Evaluation */}
+            <div className="flux-card p-8 sm:p-10 flex flex-col h-full border-[var(--color-primary)]/20">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)]">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold text-white tracking-wide">
+                  Abstract Evaluation
+                </h3>
+              </div>
+              
+              <div className="text-gray-300 space-y-5 text-sm sm:text-base flex-1">
+                <p>
+                  <strong className="text-white block mb-1">Shortlisting Criteria</strong>
+                  Up to 15 teams will be shortlisted based on their submitted abstracts.
+                </p>
+                
+                <div>
+                  <strong className="text-white block mb-2">Criteria for abstract evaluation:</strong>
+                  <ul className="space-y-1.5 ml-1">
+                    {['Relevance to Selected Domain', 'Problem Understanding & Clarity', 'Innovation & Originality', 'Proposed Solution & Features', 'Potential Impact'].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <ArrowRight className="w-4 h-4 text-[var(--color-primary)] mt-1 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="mt-auto pt-6 border-t border-white/10">
+                  <p className="italic text-gray-400">
+                    Abstracts will be evaluated by the organizing/judging committee based on the above criteria. Up to 15 teams will be shortlisted for the offline hackathon.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Judging & Reporting Details */}
         <div id="details" className="scroll-mt-28 mb-20">
           <div className="flex flex-col items-center text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-badge mb-3">
               <Info className="w-3.5 h-3.5 text-[var(--color-primary)]" />
-              <span className="text-[11px] font-bold text-gray-300 uppercase tracking-widest">Important Info</span>
+              <span className="text-[11px] font-bold text-gray-300 uppercase tracking-widest">Important Details</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Registration <span className="text-[var(--color-primary)]">Details</span>
+              Judging & <span className="text-[var(--color-primary)]">Reporting</span>
             </h2>
-            <p className="text-gray-400 text-sm max-w-xl mt-2">
-              Essential registration deadlines, pricing, and fee policies for all participating teams.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            
-            {/* Card 1: Deadline */}
-            <div className="flux-card p-6 sm:p-8 flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 flex items-center justify-center text-[var(--color-primary)] mb-5 group-hover:scale-110 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
-                  <Calendar className="w-6 h-6" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Judging / Evaluation */}
+            <div className="flux-card p-8 sm:p-10 flex flex-col h-full border-[var(--color-primary)]/20">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)]">
+                  <ShieldCheck className="w-6 h-6" />
                 </div>
-                <div className="text-xs font-semibold uppercase tracking-widest text-[var(--color-primary)] mb-1">
-                  Closing Date
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2 tracking-wide">
-                  September 14, 2026
+                <h3 className="text-2xl font-bold text-white tracking-wide">
+                  Judging / Evaluation
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Registration closes strictly on <strong className="text-white">September 14</strong>. Ensure your team registers and confirms their slot before entries close.
-                </p>
+              </div>
+              
+              <div className="text-gray-300 space-y-5 text-sm sm:text-base flex-1">
+                <div>
+                  <strong className="text-white block mb-2">Evaluation Process</strong>
+                  <p className="mb-2">There will be <strong className="text-white">NO formal presentation</strong> or pitching session. Instead, each team will undergo a direct project review by the judges.</p>
+                  <p>Judges may interact with team members individually and examine the project, implementation and working prototype.</p>
+                </div>
+                
+                <div>
+                  <strong className="text-white block mb-2">Evaluation Criteria:</strong>
+                  <ul className="space-y-1.5 ml-1">
+                    {['Relevance to Challenge', 'Functionality / Working Prototype', 'Innovation & Creativity', 'Technical Implementation', 'Usability / User Experience', 'Impact & Practical Applicability'].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-[var(--color-primary)] mt-1 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
 
-            {/* Card 2: Fee */}
-            <div className="flux-card p-6 sm:p-8 flex flex-col justify-between border-[var(--color-primary)]/40 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 px-3.5 py-1 bg-[var(--color-primary)] text-white text-[10px] font-bold uppercase tracking-widest rounded-bl-xl shadow-md">
-                Per Member
-              </div>
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 flex items-center justify-center text-[var(--color-primary)] mb-5 group-hover:scale-110 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
-                  <CreditCard className="w-6 h-6" />
+            {/* Reporting Requirements */}
+            <div className="flux-card p-8 sm:p-10 flex flex-col h-full border-[var(--color-primary)]/20">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)]">
+                  <MapPin className="w-6 h-6" />
                 </div>
-                <div className="text-xs font-semibold uppercase tracking-widest text-[var(--color-primary)] mb-1">
-                  Registration Fee
-                </div>
-                <h3 className="text-3xl font-extrabold text-white mb-2 tracking-wide">
-                  ₹29 <span className="text-base font-normal text-gray-400">/ member</span>
+                <h3 className="text-2xl font-bold text-white tracking-wide">
+                  Reporting Requirements
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  The entry fee is <strong className="text-white">₹29 per member</strong> (applicable for all teams of 2 to 4 participants).
-                </p>
+              </div>
+              
+              <div className="text-gray-300 space-y-5 text-sm sm:text-base flex-1">
+                <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-200">
+                  <strong className="text-amber-400 block mb-1">Strict Reporting Time</strong>
+                  All shortlisted team members must report to the venue by <strong className="text-white">8:30 AM on 17 September 2026</strong>.
+                </div>
+                
+                <ul className="space-y-4 ml-1 mt-4">
+                  <li className="flex items-start gap-3">
+                    <ArrowRight className="w-5 h-5 text-[var(--color-primary)] shrink-0" />
+                    <span>Check-in, verification and seating arrangements will take place before the challenge reveal.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <ArrowRight className="w-5 h-5 text-[var(--color-primary)] shrink-0" />
+                    <span>Participants are advised to arrive on time to ensure they don't miss the problem statement reveal.</span>
+                  </li>
+                </ul>
               </div>
             </div>
-
-            {/* Card 3: Refund Policy */}
-            <div className="flux-card p-6 sm:p-8 flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-5 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-black transition-all">
-                  <AlertCircle className="w-6 h-6" />
-                </div>
-                <div className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-1">
-                  Refund Policy
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2 tracking-wide">
-                  Non-Refundable
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  The registration fee is <strong className="text-gray-200">strictly non-refundable</strong> once paid under any circumstances.
-                </p>
-              </div>
-            </div>
-
           </div>
         </div>
 
@@ -380,7 +571,6 @@ const HackathonPage = () => {
                 <div className="text-3xl font-extrabold text-white mb-2">₹10,000</div>
                 <h3 className="text-lg font-bold text-[var(--color-primary)] mb-3">Total Prize Pool</h3>
                 <ul className="space-y-2 text-sm text-gray-300">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Trophies & Mementos</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Certificate of Excellence</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Exclusive Fest Swag Box</li>
                 </ul>
@@ -394,7 +584,6 @@ const HackathonPage = () => {
                 <ul className="space-y-2 text-sm text-gray-300">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--color-primary)] shrink-0" /> Official KTU Activity Points Eligible</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--color-primary)] shrink-0" /> Participation Certificates</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--color-primary)] shrink-0" /> Lunch & Refreshments Included</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[var(--color-primary)] shrink-0" /> Industry Mentorship Access</li>
                 </ul>
               </div>

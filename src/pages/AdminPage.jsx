@@ -24,7 +24,7 @@ const initialFormState = {
 };
 
 const categoryLabels = {
-  coding: 'Coding Events',
+  coding: 'Technical Events',
   esports: 'eSports Events',
   general: 'General Events'
 };
@@ -660,6 +660,25 @@ const AdminPage = () => {
                 </div>
               )}
             </div>
+
+            {/* Manual Image URL Input */}
+            <div className="mt-4 flex flex-col gap-2">
+              <label className="text-gray-500 text-[10px] font-bold uppercase tracking-widest flex items-center justify-between">
+                <span>Or Paste Image URL</span>
+                <span className="text-gray-600 font-normal lowercase tracking-normal">(if upload fails)</span>
+              </label>
+              <input 
+                type="text" 
+                value={formData.posterUrl}
+                onChange={(e) => {
+                  setFormData(prev => ({ ...prev, posterUrl: e.target.value }));
+                  setPreviewImage(e.target.value);
+                  setImageFile(null); // Clear file upload if they paste a URL
+                }}
+                placeholder="https://imgbb.com/... or https://imgur.com/..."
+                className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[var(--color-primary)] transition-colors placeholder:text-gray-700"
+              />
+            </div>
           </div>
         </div>
 
@@ -701,7 +720,7 @@ const AdminPage = () => {
                   onChange={handleInputChange}
                   className="bg-black/50 border border-white/10 rounded-xl px-4 py-3.5 text-white font-medium focus:outline-none focus:border-[var(--color-primary)] transition-colors cursor-pointer"
                 >
-                  <option value="coding" className="bg-[#121212] text-white">Coding Events</option>
+                  <option value="coding" className="bg-[#121212] text-white">Technical Events</option>
                   <option value="esports" className="bg-[#121212] text-white">eSports Events</option>
                   <option value="general" className="bg-[#121212] text-white">General Events</option>
                 </select>
