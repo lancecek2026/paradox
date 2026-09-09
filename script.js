@@ -1,0 +1,1 @@
+const fs = require('fs'); let data = fs.readFileSync('src/data/eventsData.js', 'utf8'); data = data.replace(/status:\s*'(Register Now|Registration Closed)',/g, \"status: '\',\n    registrationLink: '',\"); fs.writeFileSync('src/data/eventsData.js', data);

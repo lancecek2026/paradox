@@ -15,6 +15,7 @@ export const EVENTS = [
     categoryLabel: 'Coding Events',
     type: 'Coding',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Test your foundational C programming and problem-solving prowess under time constraints.',
     guidelines: [
       'Individual participation only.',
@@ -42,6 +43,7 @@ export const EVENTS = [
     categoryLabel: 'Coding Events',
     type: 'AI Prompting',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Craft the ultimate single prompt to guide AI models to solve intricate programming challenges without edits.',
     guidelines: [
       'Participants must craft a single master prompt to achieve the required output.',
@@ -67,6 +69,7 @@ export const EVENTS = [
     categoryLabel: 'Coding Events',
     type: 'Coding',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Code with monitors turned off! Trust your muscle memory, syntax mastery, and algorithmic thinking.',
     guidelines: [
       'Individual event with monitors switched off or covered during coding.',
@@ -92,6 +95,7 @@ export const EVENTS = [
     categoryLabel: 'Coding Events',
     type: 'Development',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Design and build stunning, responsive, and functional web applications within the time limit.',
     guidelines: [
       'Team size: 1 to 2 members.',
@@ -117,6 +121,7 @@ export const EVENTS = [
     categoryLabel: 'Coding Events',
     type: 'Coding',
     status: 'Register Now',
+    registrationLink: '',
     description: 'A relay race for programmers! Pass the keyboard to your teammate every few minutes without verbal communication.',
     guidelines: [
       'Team of 2 members.',
@@ -142,6 +147,7 @@ export const EVENTS = [
     categoryLabel: 'Coding Events',
     type: 'Debugging',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Hunt down syntax errors, subtle logic flaws, and runtime bugs hidden in complex Python code snippets.',
     guidelines: [
       'Individual competition.',
@@ -169,6 +175,7 @@ export const EVENTS = [
     categoryLabel: 'eSports Events',
     type: 'Gaming',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Dominate the virtual pitch in 1v1 tactical football showdowns. Prove your squad management and stick skills.',
     guidelines: [
       'Platform: Mobile device (participants must bring their own phones with eFootball updated).',
@@ -194,6 +201,7 @@ export const EVENTS = [
     categoryLabel: 'eSports Events',
     type: 'Gaming',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Intense multiplayer 2D shooter combat. Equip jetpacks, grab power-ups, and blast through your opponents.',
     guidelines: [
       'Squad size: 4 players per squad.',
@@ -218,6 +226,7 @@ export const EVENTS = [
     categoryLabel: 'eSports Events',
     type: 'Gaming',
     status: 'Register Now',
+    registrationLink: '',
     description: '5v5 character-based tactical FPS. Precise gunplay meets game-changing agent abilities in high-stakes matches.',
     guidelines: [
       'Team size: 5 players + 1 optional sub.',
@@ -245,6 +254,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Typing',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Test your words-per-minute speed and accuracy in high-pressure rapid keyboard typing duels.',
    guidelines: [
   'Participants must be present at the venue 10 minutes before the event starts.',
@@ -276,6 +286,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Mystery',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Crack riddles, decrypt clues, and explore the campus to locate the elusive final treasure before anyone else.',
     guidelines: [
       'Team size: 3 to 4 members.',
@@ -301,6 +312,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Knowledge',
     status: 'Register Now',
+    registrationLink: '',
     description: 'A battle of wits testing technical trivia, science, pop culture, and rapid-fire general awareness.',
     guidelines: [
   'All participants must compete in teams.',
@@ -335,6 +347,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Literary',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Spot subtle syntax, spelling, punctuation, and grammatical blunders in tricky written passages.',
     guidelines: [
       'Individual event.',
@@ -360,6 +373,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'General Tech',
     status: 'Register Now',
+    registrationLink: '',
     description: 'The comprehensive multi-round flagship evaluation testing problem solving, engineering aptitude, and design logic.',
     guidelines: [
       'Flagship multi-stage event evaluating overall engineering aptitude.',
@@ -385,6 +399,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Mystery',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Analyze forensic evidence, question suspects, piece together chronological timelines, and crack the case.',
     guidelines: [
       'Team of 2 to 3 members.',
@@ -410,6 +425,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Creative',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Capture stunning photographs on campus based on impromptu creative themes and lighting angles.',
     guidelines: [
       'Theme will be announced on the spot.',
@@ -434,6 +450,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Ideation',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Present original startup ideas and novel technological solutions before an esteemed jury panel.',
     guidelines: [
       'Team size: 1 to 3 members.',
@@ -459,6 +476,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Ideation',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Demonstrate charismatic marketing skills, value proposition, and sales pitch for unique challenge products.',
     guidelines: [
       'Surprise everyday product assigned by the judges on the spot.',
@@ -484,6 +502,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Strategy',
     status: 'Register Now',
+    registrationLink: '',
     description: 'A tournament of grandmaster intellect, spatial vision, and relentless tactical warfare over the 64 squares.',
     guidelines: [
       'Format: Swiss-system or knockout rapid tournament.',
@@ -509,6 +528,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Presentation',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Craft and deliver an engaging presentation deck on a surprise topic revealed on the spot.',
    guidelines: [
   'This is an individual event; each participant must compete individually.',
@@ -540,6 +560,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Creative',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Unleash graphic design talents and visual storytelling to engineer striking digital posters.',
     guidelines: [
       'Individual event.',
@@ -565,6 +586,7 @@ export const EVENTS = [
     categoryLabel: 'General Events',
     type: 'Literary',
     status: 'Register Now',
+    registrationLink: '',
     description: 'Clash in articulate arguments, persuasive rhetoric, and dynamic rebuttal on contemporary tech and ethics topics.',
     guidelines: [
       'Parliamentary / Oxford style debate format.',
@@ -593,6 +615,7 @@ export const HACKATHON_EVENT = {
   categoryLabel: 'Flagship Hackathon',
   type: 'Hackathon',
   status: 'Register Now',
+    registrationLink: '',
   description: 'An intense 8-hour non-stop hackathon challenging creators, developers, and designers to build transformative prototypes tackling real-world problems.',
   guidelines: [
     'Team size: 2 to 4 members from any recognized institution.',
