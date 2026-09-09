@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import aboutPoster from '../assets/about-poster.jpg';
-
+import e1 from '../assets/e1.jpeg';
+import e2 from '../assets/e2.jpeg';
+import e3 from '../assets/e3.jpeg';
+import p1 from '../assets/p1.jpeg';
+import p2 from '../assets/p2.jpeg';
+import p3 from '../assets/p3.jpeg';
 const AboutSection = () => {
   return (
     <section id="about" className="py-24 relative w-full scroll-mt-20 overflow-hidden bg-[var(--color-bg-dark)]">
@@ -71,9 +76,9 @@ const AboutSection = () => {
               className="flex items-center gap-6 mb-16 border-b border-white/5 pb-8"
             >
                <div className="flex -space-x-2">
-                 <div className="w-8 h-8 rounded-full bg-gray-800 border-2 border-[var(--color-bg-dark)]"></div>
-                 <div className="w-8 h-8 rounded-full bg-gray-700 border-2 border-[var(--color-bg-dark)]"></div>
-                 <div className="w-8 h-8 rounded-full bg-gray-600 border-2 border-[var(--color-bg-dark)]"></div>
+                 <img src={e1} alt="Domain 1" className="w-8 h-8 rounded-full border-2 border-[var(--color-bg-dark)] object-cover" />
+                 <img src={e2} alt="Domain 2" className="w-8 h-8 rounded-full border-2 border-[var(--color-bg-dark)] object-cover" />
+                 <img src={e3} alt="Domain 3" className="w-8 h-8 rounded-full border-2 border-[var(--color-bg-dark)] object-cover" />
                </div>
                <div className="text-xs text-gray-400">
                  Over <strong className="text-white">20+ Events</strong><br/>
@@ -95,11 +100,10 @@ const AboutSection = () => {
                   <div className="text-4xl font-sans font-light text-white mb-2">150+</div>
                   <div className="text-xs text-gray-500">Expected Participants</div>
                 </div>
-                <div className="flex gap-4 opacity-50">
-                   {/* Decorative dots */}
-                   <div className="w-4 h-4 bg-gray-700 rounded-sm"></div>
-                   <div className="w-4 h-4 bg-gray-700 rounded-sm"></div>
-                   <div className="w-4 h-4 bg-gray-700 rounded-sm"></div>
+                <div className="flex gap-4 opacity-80 mt-1">
+                   <img src={p1} alt="participant" className="w-6 h-6 rounded-md object-cover shadow-sm" />
+                   <img src={p2} alt="participant" className="w-6 h-6 rounded-md object-cover shadow-sm" />
+                   <img src={p3} alt="participant" className="w-6 h-6 rounded-md object-cover shadow-sm" />
                 </div>
                 <a href="#events" className="mt-4 bg-[var(--color-primary)] text-white text-xs font-medium py-3 px-6 rounded-full text-center hover:bg-[var(--color-secondary)] transition-colors">
                   View Events

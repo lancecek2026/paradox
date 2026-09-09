@@ -15,7 +15,7 @@ export const EVENTS = [
     categoryLabel: 'Coding Events',
     type: 'Coding',
     status: 'Register Now',
-    registrationLink: '',
+    registrationLink: 'https://res.cloudinary.com/pfvatafs/image/upload/v1784354760/Screenshot_2026-07-18_113549_jsx2gb.png',
     description: 'Test your foundational C programming and problem-solving prowess under time constraints.',
     guidelines: [
       'Individual participation only.',
@@ -28,7 +28,7 @@ export const EVENTS = [
     time: '10:00 AM - 12:30 PM',
     venue: 'BC Lab / MM Lab',
     prizePool: '2000',
-    posterUrl: 'https://paradox25.netlify.app/_next/image?url=%2Fposters%2Fcchallenge.png&w=1920&q=75',
+    posterUrl: 'https://res.cloudinary.com/pfvatafs/image/upload/v1784354760/Screenshot_2026-07-18_113549_jsx2gb.png',
     contacts: [
       { name: 'Gokila', phone: '6282681915' },
       { name: 'Hari', phone: '8078759239' }
@@ -43,7 +43,7 @@ export const EVENTS = [
     categoryLabel: 'Coding Events',
     type: 'AI Prompting',
     status: 'Register Now',
-    registrationLink: '',
+    registrationLink: 'https://paradox-2026.vercel.app/',
     description: 'Craft the ultimate single prompt to guide AI models to solve intricate programming challenges without edits.',
     guidelines: [
       'Participants must craft a single master prompt to achieve the required output.',

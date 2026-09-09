@@ -70,6 +70,7 @@ const Navbar = () => {
           
           {/* Center: Navigation Pill Container */}
           <div className="hidden lg:flex items-center bg-white/5 border border-white/10 rounded-xl p-1.5 gap-1 backdrop-blur-md">
+            <Link to="/" className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-5 py-2 rounded-lg transition-all tracking-wide">Home</Link>
             <a href="/#about" className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-5 py-2 rounded-lg transition-all tracking-wide">About</a>
             <a href="/#events" className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-5 py-2 rounded-lg transition-all tracking-wide">Events</a>
             <Link 
@@ -133,6 +134,10 @@ const Navbar = () => {
 
             {/* Links */}
             <div className="flex flex-col gap-4">
+              <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-4 group hover:border-[var(--color-primary)] transition-colors">
+                <span className="font-sans text-lg font-medium text-white tracking-wide">HOME</span>
+                <ChevronRight className="w-5 h-5 text-white/50 group-hover:text-white transition-colors" />
+              </Link>
               <a href="/#about" onClick={() => setIsOpen(false)} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-4 group hover:border-[var(--color-primary)] transition-colors">
                 <span className="font-sans text-lg font-medium text-white tracking-wide">ABOUT</span>
                 <ChevronRight className="w-5 h-5 text-white/50 group-hover:text-white transition-colors" />

@@ -205,7 +205,7 @@ const EventDetails = () => {
                     Registration Closed
                   </div>
                 ) : (
-                  <a href={event.registrationLink || '#'} rel="noopener noreferrer" className="flex-1 bg-white hover:bg-gray-200 text-[#070707] transition-all rounded-full px-6 py-3.5 font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:-translate-y-0.5 flex items-center justify-center gap-2 group">
+                  <a href={event.registrationLink || '#'} target="_blank" rel="noopener noreferrer" className="flex-1 bg-white hover:bg-gray-200 text-[#070707] transition-all rounded-full px-6 py-3.5 font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:-translate-y-0.5 flex items-center justify-center gap-2 group">
                     Register Now
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
