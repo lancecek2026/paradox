@@ -16,8 +16,23 @@ const ReviewPage = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [showGuidelines, setShowGuidelines] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginError, setLoginError] = useState('');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (username === 'coordinator' && password === 'paradox26') {
+      setIsAuthenticated(true);
+      setLoginError('');
+    } else {
+      setLoginError('Invalid username or password');
+    }
+  };
 
   useEffect(() => {
+    if (!isAuthenticated) return;
     const fetchEvent = async () => {
       try {
         let eventData = EVENTS_BY_ID[eventId] || null;
@@ -45,7 +60,7 @@ const ReviewPage = () => {
     };
 
     fetchEvent();
-  }, [eventId]);
+  }, [eventId, isAuthenticated]);
 
   const handleApproval = async (status) => {
     if (isUpdating) return;
@@ -64,6 +79,61 @@ const ReviewPage = () => {
       setIsUpdating(false);
     }
   };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="w-full min-h-screen bg-[var(--color-bg-dark)] flex items-center justify-center p-6 relative overflow-hidden">
+        {/* Background Gradients */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[var(--color-primary)]/10 blur-[120px] rounded-full"></div>
+          <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-500/10 blur-[120px] rounded-full"></div>
+        </div>
+
+        <div className="relative z-10 w-full max-w-md bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-xl">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-white mb-2">Coordinator Login</h2>
+            <p className="text-gray-400 text-sm">Please log in to review and approve events.</p>
+          </div>
+
+          <form onSubmit={handleLogin} className="space-y-4">
+            <div>
+              <label className="block text-gray-400 text-xs font-semibold uppercase tracking-wider mb-2">Username</label>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[var(--color-primary)] transition-colors"
+                placeholder="Enter username"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-gray-400 text-xs font-semibold uppercase tracking-wider mb-2">Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[var(--color-primary)] transition-colors"
+                placeholder="Enter password"
+                required
+              />
+            </div>
+            
+            {loginError && (
+              <p className="text-red-500 text-sm text-center">{loginError}</p>
+            )}
+
+            <button
+              type="submit"
+              className="w-full mt-6 px-6 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 text-white font-bold rounded-xl transition-colors shadow-[0_0_20px_rgba(255,51,0,0.3)]"
+            >
+              Access Review Page
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   if (isLoading) {
     return (
