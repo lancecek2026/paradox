@@ -306,10 +306,7 @@ const HackathonPage = () => {
                 </p>
               </div>
 
-              <p>
-                <strong className="text-white">Lunch:</strong> Lunch is NOT included in this amount. Participants who wish to avail lunch may opt for it separately at an additional charge.
-              </p>
-
+             
               <div className="flex items-center gap-3 text-amber-400 font-semibold mt-8 pt-6 border-t border-white/10">
                 <Calendar className="w-5 h-5" />
                 <p>Registration Deadline: 14 September 2026</p>
