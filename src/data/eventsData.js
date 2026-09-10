@@ -18,7 +18,7 @@ export const EVENTS = [
     registrationLink: 'https://res.cloudinary.com/pfvatafs/image/upload/v1784354760/Screenshot_2026-07-18_113549_jsx2gb.png',
     description: 'Test your foundational C programming and problem-solving prowess under time constraints.',
     guidelines: [
-      'Individual participation only.',
+      'demo.',
       'Standard GCC / Turbo C compilers will be provided on lab PCs.',
       'Participants will solve algorithmic problems and output-prediction questions.',
       'Time limit: 2 hours 30 minutes.',
@@ -46,7 +46,7 @@ export const EVENTS = [
     registrationLink: 'https://paradox-2026.vercel.app/',
     description: 'Craft the ultimate single prompt to guide AI models to solve intricate programming challenges without edits.',
     guidelines: [
-      'Participants must craft a single master prompt to achieve the required output.',
+      'demo.',
       'Only 1 submission allowed per problem statement; no follow-up iterative prompting.',
       'Specified LLM platform will be provided at the venue.',
       'Evaluation is based on accuracy, token efficiency, and correctness.'
@@ -72,7 +72,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'Code with monitors turned off! Trust your muscle memory, syntax mastery, and algorithmic thinking.',
     guidelines: [
-      'Individual event with monitors switched off or covered during coding.',
+      'demo.',
       'Participants are given problem statements on paper or screen for 5 minutes to read.',
       'No looking at screen or keyboard backlights while typing.',
       'Judging criteria: Least compilation errors, syntax accuracy, and logical execution.'
@@ -131,7 +131,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'A relay race for programmers! Pass the keyboard to your teammate every few minutes without verbal communication.',
     guidelines: [
-      'Team of 2 members.',
+      'demo.',
       'Each teammate codes in alternating 10-minute relay intervals.',
       'Zero verbal or written communication between teammates during the handoff.',
       'Language choices: C, C++, Java, or Python.'
@@ -157,7 +157,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'Hunt down syntax errors, subtle logic flaws, and runtime bugs hidden in complex Python code snippets.',
     guidelines: [
-      'Individual competition.',
+      'demo.',
       'Code snippets with logical, semantic, and syntax bugs will be provided.',
       'Participants must fix bugs within the allotted time without rewriting the entire logic.',
       'Fastest correct bug-free executions win.'
@@ -199,11 +199,11 @@ export const EVENTS = [
   'All players must strictly follow the above rules.',
   'The organizer’s decision will be final and binding in case of any dispute.'
 ],
-    date: '7/10/2025',
-    time: '10:00 AM - 02:00 PM',
-    venue: 'Gaming Arena / Seminar Hall',
+    date: '13,14,&15',
+    time: 'To be announced by coordinators',
+    venue: 'Hybrid',
     prizePool: '3000',
-    posterUrl: 'https://paradox25.netlify.app/posters/debate.jpg',
+    posterUrl: 'https://res.cloudinary.com/fv5qvnz9/image/upload/v1789056725/WhatsApp_Image_2026-09-10_at_9.37.01_PM.jpg',
     contacts: [
       { name: 'Aswin Ajayan', phone: '9037662883' },
       { name: 'Albin Josy', phone: '9778115077' }
@@ -220,7 +220,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'Intense multiplayer 2D shooter combat. Equip jetpacks, grab power-ups, and blast through your opponents.',
     guidelines: [
-      'Squad size: 4 players per squad.',
+      'semo.',
       'Standard official maps will be selected randomly or by toss.',
       'No modified APKs, unlimited ammo, or third-party boosters allowed.',
       'Highest total kill count across rounds determines progression.'
@@ -234,32 +234,7 @@ export const EVENTS = [
       { name: 'Dhanwanth Manoj', phone: '7306734566' }
     ]
   },
-  {
-    id: 'valorant',
-    number: 9,
-    title: 'VALORANT',
-    category: 'esports',
-    categoryLabel: 'eSports Events',
-    type: 'Gaming',
-    status: 'Register Now',
-    registrationLink: '',
-    description: '5v5 character-based tactical FPS. Precise gunplay meets game-changing agent abilities in high-stakes matches.',
-    guidelines: [
-      'Team size: 5 players + 1 optional sub.',
-      'Format: Standard Competitive 5v5 custom lobby, Tournament mode enabled.',
-      'Map pool: Standard active competitive map pool with map vetoes.',
-      'Any form of third-party scripting, macros, or toxicity leads to instant disqualification.'
-    ],
-    date: '7/10/2025',
-    time: '10:00 AM - 04:00 PM',
-    venue: 'Main Esports Arena',
-    prizePool: '5000',
-    posterUrl: 'https://paradox25.netlify.app/posters/debate.jpg',
-    contacts: [
-      { name: 'Alen Jose', phone: '6238877641' },
-      { name: 'Sachu Sajeev', phone: '8590205927' }
-    ]
-  },
+ 
 
   // --- GENERAL EVENTS (10 - 22) ---
   {
@@ -305,7 +280,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'Crack riddles, decrypt clues, and explore the campus to locate the elusive final treasure before anyone else.',
     guidelines: [
-      'Team size: 3 to 4 members.',
+      'demo.',
       'All team members must stay together throughout the hunt.',
       'Damaging college property or entering restricted zones is strictly forbidden.',
       'The first team to decode all clues and bring the final token to the finish line wins.'
@@ -366,7 +341,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'Spot subtle syntax, spelling, punctuation, and grammatical blunders in tricky written passages.',
     guidelines: [
-      'Individual event.',
+      'demo.',
       'Passages containing punctuation, tense, subject-verb agreement, and spelling blunders will be provided.',
       'Participants must identify and write the exact corrections within 45 minutes.',
       'No electronic dictionaries or internet allowed.'
@@ -392,7 +367,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'The comprehensive multi-round flagship evaluation testing problem solving, engineering aptitude, and design logic.',
     guidelines: [
-      'Flagship multi-stage event evaluating overall engineering aptitude.',
+      'demo',
       'Round 1: Engineering Aptitude & Logic Quiz.',
       'Round 2: Rapid Prototyping / Troubleshooting challenge.',
       'Round 3: Stress interview & technical defense before the faculty panel.'
@@ -418,7 +393,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'Analyze forensic evidence, question suspects, piece together chronological timelines, and crack the case.',
     guidelines: [
-      'Team of 2 to 3 members.',
+      'demo',
       'Crime scene inspection duration: 10 minutes strictly.',
       'Teams must examine clues, forensic evidence, and witness testimonies.',
       'Final submission requires submitting a coherent crime report identifying the culprit and motive.'
@@ -444,7 +419,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'Capture stunning photographs on campus based on impromptu creative themes and lighting angles.',
     guidelines: [
-      'Theme will be announced on the spot.',
+      'Tdemo',
       'All photographs must be captured within campus boundaries during event hours.',
       'DSLR cameras and mobile phones permitted.',
       'Basic color grading allowed; heavy manipulation/AI generation leads to disqualification.'
@@ -469,7 +444,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'Present original startup ideas and novel technological solutions before an esteemed jury panel.',
     guidelines: [
-      'Team size: 1 to 3 members.',
+      'demo.',
       'Pitch duration: 5 minutes presentation + 3 minutes Q&A with the jury.',
       'Focus areas: Feasibility, market relevance, technology innovation, and business scalability.',
       'Presentation slides must be submitted prior to the start of the round.'
@@ -495,7 +470,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'Demonstrate charismatic marketing skills, value proposition, and sales pitch for unique challenge products.',
     guidelines: [
-      'Surprise everyday product assigned by the judges on the spot.',
+      'demo',
       'Preparation time: 10 minutes.',
       'Pitch time: 3 minutes to sell the product with innovative marketing angles.',
       'Humor, persuasion, creativity, and objection handling will be evaluated.'
@@ -510,32 +485,7 @@ export const EVENTS = [
       { name: 'Annu Siby', phone: '8590927649' }
     ]
   },
-  {
-    id: 'chess',
-    number: 19,
-    title: 'CHESS COMPETITION',
-    category: 'general',
-    categoryLabel: 'General Events',
-    type: 'Strategy',
-    status: 'Register Now',
-    registrationLink: '',
-    description: 'A tournament of grandmaster intellect, spatial vision, and relentless tactical warfare over the 64 squares.',
-    guidelines: [
-      'Format: Swiss-system or knockout rapid tournament.',
-      'Time control: 10 minutes + 5 seconds increment per player.',
-      'FIDE rapid rules apply; touch-move strictly enforced.',
-      'Arbiter decisions are final and binding.'
-    ],
-    date: '7/10/2025',
-    time: '10:00 AM - 02:00 PM',
-    venue: 'Recreation Hall',
-    prizePool: '2000',
-    posterUrl: 'https://paradox25.netlify.app/posters/debate.jpg',
-    contacts: [
-      { name: 'BHAVYA', phone: '7510695281' },
-      { name: 'COORDINATOR', phone: '9876543210' }
-    ]
-  },
+  
   {
     id: 'spot-ppt',
     number: 20,
@@ -578,12 +528,22 @@ export const EVENTS = [
     status: 'Register Now',
     registrationLink: '',
     description: 'Unleash graphic design talents and visual storytelling to engineer striking digital posters.',
-    guidelines: [
-      'Individual event.',
-      'Software allowed: Photoshop, Illustrator, Figma, or Canva.',
-      'Theme announced at the start of the competition.',
-      'Original artwork required; source files must be presented upon request.'
-    ],
+   guidelines: [
+  'The competition is open to all students of the institution.',
+  'The theme/topic will be announced by the organizers at the beginning of the competition.',
+  'The poster must be designed on-site during the competition.',
+  'Participants may bring their own laptop and required accessories, if possible.',
+  'Only Canva and Figma are permitted for designing the poster.',
+  'Pre-designed templates, previously created posters, or pre-made designs must not be used.',
+  'AI tools and AI-generated content are strictly prohibited.',
+  'Participants may search for and download images, icons, fonts, and other design resources online for use in the poster.',
+  'Participants are encouraged to present the given theme in an original, creative, and visually appealing manner.',
+  'The maximum time allotted for the competition is 1 hour and 30 minutes.',
+  'The completed poster must be submitted before the given deadline in the format specified by the organizers.',
+  'Plagiarism or direct copying of existing designs or artwork will result in disqualification.',
+  'Any unfair practice or violation of the competition rules may lead to immediate disqualification.',
+  'The decision of the judging panel will be final and binding.'
+],
     date: '7/10/2025',
     time: '01:00 PM - 03:00 PM',
     venue: 'Design Studio / Multimedia Lab',
@@ -605,7 +565,7 @@ export const EVENTS = [
     registrationLink: '',
     description: 'Clash in articulate arguments, persuasive rhetoric, and dynamic rebuttal on contemporary tech and ethics topics.',
     guidelines: [
-      'Parliamentary / Oxford style debate format.',
+      'demo',
       'Stance (For or Against) decided by coin toss 15 minutes before the debate.',
       'Time allocation: 3 minutes constructive speech, 2 minutes rebuttal, 1 minute conclusion.',
       'Unparliamentary language or personal attacks lead to immediate disqualification.'
@@ -631,7 +591,7 @@ export const EVENTS = [
     registrationLink: 'https://event.funded.site/e/paradox-workshop',
     description: 'An immersive workshop covering the fundamentals of Artificial Intelligence and its practical applications.',
     guidelines: [
-      'Open for all interested students.',
+      'demo',
       'Participants must bring their own laptops.',
       'No prior AI experience required.'
     ],
