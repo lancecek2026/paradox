@@ -287,24 +287,15 @@ const HackathonPage = () => {
             </div>
             
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
-              Registration & <span className="text-[var(--color-primary)]">Fees</span>
+              Registration <span className="text-[var(--color-primary)]"></span>
             </h2>
             
             <div className="space-y-4 text-gray-300 leading-relaxed text-sm sm:text-base">
               <p>
-                <strong className="text-white text-lg">REGISTRATION IS FREE</strong><br />
-                There is no registration fee for applying and submitting your abstract.
+                <strong className="text-white text-6xl uppercase tracking-wider">FREE</strong><br />
               </p>
               
-              <div className="p-4 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 rounded-xl my-6">
-                <p className="text-[var(--color-primary)] font-semibold mb-2 flex items-center gap-2">
-                  <AlertCircle className="w-5 h-5" />
-                  Shortlisted Team Fee
-                </p>
-                <p>
-                  However, shortlisted teams are required to pay <strong className="text-white">₹50 per participant</strong>. The ₹50 charge is mandatory for every member of a shortlisted team and covers refreshments provided during the hackathon.
-                </p>
-              </div>
+             
 
              
               <div className="flex items-center gap-3 text-amber-400 font-semibold mt-8 pt-6 border-t border-white/10">
@@ -570,6 +561,7 @@ const HackathonPage = () => {
                 <ul className="space-y-2 text-sm text-gray-300">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Certificate of Excellence</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Exclusive Fest Swag Box</li>
+                     <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Free Food Provided</li>
                 </ul>
               </div>
             </div>

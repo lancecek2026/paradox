@@ -11,6 +11,8 @@ import HackathonPage from './pages/HackathonPage';
 import ReviewPage from './pages/ReviewPage';
 import './index.css';
 import pdoxLogo from './assets/pdox.png';
+import loadVideo from './assets/load.mp4';
+
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
   useEffect(() => {
@@ -55,20 +57,20 @@ function App() {
 
   return (
     <div className="relative min-h-screen w-full bg-[var(--color-bg-dark)] font-sans text-gray-100 overflow-x-hidden">
-      {/* Loading Screen Overlay - Professional & Minimal */}
+      {/* Loading Screen Overlay - Video Animation */}
       {isLoading && (
         <div 
-          className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[var(--color-bg-dark)] transition-opacity duration-500 ease-in-out ${
+          className={`fixed inset-0 z-[100] flex items-center justify-center bg-[var(--color-bg-dark)] transition-opacity duration-500 ease-in-out ${
             fadeOut ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          {/* Minimalist Loading Line & Text */}
-          <div className="flex flex-col items-center gap-4 w-64 max-w-full px-4">
-            <span className="font-sans font-bold text-white tracking-[0.3em] text-2xl uppercase">Paradox 26</span>
-            <div className="w-full h-[2px] bg-gray-800 rounded overflow-hidden">
-              <div className="h-full bg-[var(--color-primary)] animate-loading-progress"></div>
-            </div>
-          </div>
+          <video 
+            src={loadVideo} 
+            autoPlay 
+            muted 
+            playsInline 
+            className="w-64 max-w-full h-auto object-contain"
+          />
         </div>
       )}
 
