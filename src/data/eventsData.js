@@ -202,7 +202,7 @@ export const EVENTS = [
     date: '13,14,&15',
     time: 'To be announced by coordinators',
     venue: 'Hybrid',
-    prizePool: '3000',
+    prizePool: '800',
     posterUrl: 'https://res.cloudinary.com/fv5qvnz9/image/upload/v1789056725/WhatsApp_Image_2026-09-10_at_9.37.01_PM.jpg',
     contacts: [
       { name: 'Aswin Ajayan', phone: '9037662883' },
