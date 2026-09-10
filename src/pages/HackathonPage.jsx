@@ -68,7 +68,6 @@ const RULES = [
   'Team size: 2–4 members. Inter-college teams are allowed. Participants can only be part of one team.',
   'Registration and abstract submission are completely FREE.',
   'Only up to 15 teams will be shortlisted based on abstract evaluation.',
-  'Shortlisted teams must pay a mandatory ₹50 per participant charge (covers refreshments, lunch is separate).',
   'Only software projects are allowed. Teams may use any software tech, APIs, frameworks, or AI/ML tools.',
   'Three final challenge statements will be revealed on the day. Teams can choose ANY ONE regardless of their abstract domain.',
   'A selected challenge cannot be changed once development begins.',
@@ -174,7 +173,7 @@ const HackathonPage = () => {
           >
             {/* TODO: Replace '#' with the actual external registration URL */}
             <a 
-              href="https://event.funded.site/e/paradox-workshop" 
+              href="https://event.funded.site/e/paranova-2026" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex-1 sm:flex-initial sm:w-auto bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-white font-sans font-semibold text-sm sm:text-base py-2.5 sm:py-3.5 px-4 sm:px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(255,51,0,0.3)] hover:scale-[1.02] flex items-center justify-center text-center"
@@ -590,7 +589,7 @@ const HackathonPage = () => {
                 <ul className="space-y-2 text-sm text-gray-300">
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Certificate of Excellence</li>
                   <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Exclusive Fest Swag Box</li>
-                     <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Free Food Provided</li>
+                     <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> Refreshments  Provided</li>
                 </ul>
               </div>
             </div>
@@ -751,7 +750,7 @@ const HackathonPage = () => {
             </p>
             {/* TODO: Replace '#' with the actual external registration URL */}
             <a 
-              href="https://event.funded.site/e/paradox-workshop" 
+              href="https://event.funded.site/e/paranova-2026" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-black hover:bg-black/80 text-white font-bold text-sm px-10 py-4 rounded-full transition-all shadow-xl hover:scale-105 flex items-center gap-2 group"
