@@ -619,6 +619,29 @@ export const EVENTS = [
       { name: 'Ajay Krishna AP', phone: '8848608233' },
       { name: 'Arya C Anish', phone: '7592815138' }
     ]
+  },
+  {
+    id: 'ai-workshop',
+    number: 23,
+    title: 'AI WORKSHOP',
+    category: 'coding',
+    categoryLabel: 'Technical Events',
+    type: 'Workshop',
+    status: 'Register Now',
+    registrationLink: 'https://event.funded.site/e/paradox-workshop',
+    description: 'An immersive workshop covering the fundamentals of Artificial Intelligence and its practical applications.',
+    guidelines: [
+      'Open for all interested students.',
+      'Participants must bring their own laptops.',
+      'No prior AI experience required.'
+    ],
+    date: '7/10/2025',
+    time: '10:00 AM - 04:00 PM',
+    venue: 'To be announced',
+    posterUrl: 'https://res.cloudinary.com/pfvatafs/image/upload/v1784354760/Screenshot_2026-07-18_113549_jsx2gb.png',
+    contacts: [
+      { name: 'Coordinator', phone: '9876543210' }
+    ]
   }
 ];
 

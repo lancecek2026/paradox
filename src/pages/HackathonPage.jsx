@@ -57,7 +57,7 @@ const TIMELINE = [
   { time: '08:30 AM - 09:00 AM', title: 'Verification & Team Settlement', desc: 'Check-in, verification and seating arrangements.' },
   { time: '09:00 AM - 09:15 AM', title: 'Opening Briefing + Challenge Reveal', desc: 'Briefing and revelation of the final problem statements.' },
   { time: '09:15 AM', title: 'Hackathon Begins', desc: 'Teams choose their challenge and start development.' },
-  { time: '12:30 PM - 01:15 PM', title: 'Lunch Break*', desc: 'Lunch break (Optional lunch available at additional cost).' },
+  { time: '12:30 PM - 01:15 PM', title: 'Lunch Break*', desc: 'Lunch break.' },
   { time: '01:15 PM - 03:00 PM', title: 'Development Ends / Final Submission', desc: 'Final development sprint and submission.' },
   { time: '03:00 PM - 03:15 PM', title: 'Tea Break', desc: 'Short break for refreshments.' },
   { time: '03:15 PM - 04:00 PM', title: 'Individual Project Review', desc: 'Judges interact with teams to review working prototypes (No formal pitch).' },

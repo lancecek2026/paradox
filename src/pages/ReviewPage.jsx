@@ -254,15 +254,17 @@ const ReviewPage = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)] shrink-0">
-                    <Trophy className="w-4 h-4" />
+                {event.prizePool && (
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)] shrink-0">
+                      <Trophy className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-[var(--color-primary)] text-[10px] font-bold uppercase tracking-widest mb-0.5">Prize Pool</h4>
+                      <p className="text-white font-bold text-lg drop-shadow-[0_0_10px_rgba(255,51,0,0.3)]">₹{event.prizePool}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-[var(--color-primary)] text-[10px] font-bold uppercase tracking-widest mb-0.5">Prize Pool</h4>
-                    <p className="text-white font-bold text-lg drop-shadow-[0_0_10px_rgba(255,51,0,0.3)]">₹{event.prizePool}</p>
-                  </div>
-                </div>
+                )}
               </div>
 
               <div className="w-full h-px bg-white/5 my-2"></div>
