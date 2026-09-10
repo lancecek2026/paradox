@@ -664,7 +664,12 @@ export const HACKATHON_EVENT = {
     'Only 15 teams will be shortlisted based on abstract evaluation.',
     'Shortlisted teams must pay a mandatory ₹50 per participant participation fee (covers refreshments).',
     'Three final problem statements will be revealed on the event day. Teams can choose ANY challenge regardless of their abstract domain.',
-    'Development time is strictly 6 hours. Evaluation through individual project review (no formal pitching).'
+    'Development time is strictly 6 hours. Evaluation through individual project review (no formal pitching).',
+    'Abstract Submission: Prepare your abstract as a single PDF (or Word document converted to PDF) file.',
+    'Name the file clearly: TeamName_AbstractSubmission.pdf',
+    'Upload the file to Google Drive. Right-click the file → Share → under "General access," change it from "Restricted" to "Anyone with the link", and set the role to Viewer.',
+    'Copy the shareable link and paste it into the abstract submission field on the registration form.',
+    '⚠️ Important: Submissions with restricted access links (i.e., links that require requesting permission) will not be considered for review.'
   ],
   date: '17 September 2026',
   time: '09:00 AM - 04:00 PM',

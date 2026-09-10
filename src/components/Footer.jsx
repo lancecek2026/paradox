@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="flex flex-col gap-4">
             <h3 className="text-sm font-semibold tracking-wide text-white">Follow Us</h3>
             <div className="flex flex-row gap-4">
-              <a href="#" className="text-gray-400 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">Instagram</a>
+              <a href="https://www.instagram.com/lance_cek?stkn=NWgxeXZveDdvcnBx" className="text-gray-400 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">Instagram</a>
               <a href="#" className="text-gray-400 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">LinkedIn</a>
               <a href="#" className="text-gray-400 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">Twitter</a>
             </div>
@@ -58,7 +58,7 @@ const Footer = () => {
             &copy; 2026 PARADOX. All rights reserved.
           </p>
           <p className="text-gray-500 font-medium text-[11px]">
-            Designed by Edwin Jijo
+            Designed by the PARADOX Team
           </p>
         </div>
       </div>

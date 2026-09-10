@@ -65,7 +65,7 @@ const TIMELINE = [
 ];
 
 const RULES = [
-  'Team size: 1–4 members. Inter-college teams are allowed. Participants can only be part of one team.',
+  'Team size: 2–4 members. Inter-college teams are allowed. Participants can only be part of one team.',
   'Registration and abstract submission are completely FREE.',
   'Only up to 15 teams will be shortlisted based on abstract evaluation.',
   'Shortlisted teams must pay a mandatory ₹50 per participant charge (covers refreshments, lunch is separate).',
@@ -174,7 +174,7 @@ const HackathonPage = () => {
           >
             {/* TODO: Replace '#' with the actual external registration URL */}
             <a 
-              href="#" 
+              href="https://event.funded.site/e/paradox-workshop" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex-1 sm:flex-initial sm:w-auto bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-white font-sans font-semibold text-sm sm:text-base py-2.5 sm:py-3.5 px-4 sm:px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(255,51,0,0.3)] hover:scale-[1.02] flex items-center justify-center text-center"
@@ -376,7 +376,7 @@ const HackathonPage = () => {
                   </ul>
                 </div>
                 
-                <p className="inline-block bg-white/5 px-3 py-1.5 rounded-lg text-amber-400 font-semibold border border-white/10">
+                <p className="inline-block bg-white/5 px-3 py-1.5 rounded-lg text-amber-400 font-semibold border border-white/10 mt-2">
                   Abstract Limit: Maximum 250–300 words
                 </p>
 
@@ -425,6 +425,35 @@ const HackathonPage = () => {
             </div>
 
           </div>
+
+          {/* Submission Instructions */}
+          <div className="mt-8 max-w-6xl mx-auto flux-card p-8 sm:p-10 border-[var(--color-primary)]/20">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)]">
+                <Globe className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl font-bold text-white tracking-wide">
+                How to Submit Your Abstract
+              </h3>
+            </div>
+            
+            <div className="text-gray-300 text-sm sm:text-base">
+              <ol className="space-y-3 ml-4 list-decimal mb-6">
+                <li>Prepare your abstract as a single PDF (or Word document converted to PDF) file.</li>
+                <li>Name the file clearly: <code className="bg-white/10 px-1.5 py-0.5 rounded text-sm text-[var(--color-primary)]">TeamName_AbstractSubmission.pdf</code></li>
+                <li>Upload the file to Google Drive.</li>
+                <li>Right-click the file → Share → under "General access," change it from "Restricted" to "Anyone with the link", and set the role to Viewer.</li>
+                <li>Copy the shareable link.</li>
+                <li>Paste the link into the abstract submission field on the registration form/website.</li>
+              </ol>
+
+              <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-200 inline-block w-full">
+                <strong className="text-amber-400 flex items-center gap-2 mb-1"><AlertCircle className="w-4 h-4" /> Important</strong>
+                Submissions with restricted access links (i.e., links that require requesting permission) will not be considered for review.
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {/* Judging & Reporting Details */}
@@ -722,7 +751,7 @@ const HackathonPage = () => {
             </p>
             {/* TODO: Replace '#' with the actual external registration URL */}
             <a 
-              href="#" 
+              href="https://event.funded.site/e/paradox-workshop" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-black hover:bg-black/80 text-white font-bold text-sm px-10 py-4 rounded-full transition-all shadow-xl hover:scale-105 flex items-center gap-2 group"
