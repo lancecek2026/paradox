@@ -242,7 +242,7 @@ const HackathonPage = () => {
               Challenge <span className="text-[var(--color-primary)]">Tracks</span>
             </h2>
             <p className="text-gray-400 text-sm max-w-xl mt-2">
-              Select one of the dedicated domains or bring an open-ended technological innovation.
+              Select one of the dedicated domains.
             </p>
           </div>
 
