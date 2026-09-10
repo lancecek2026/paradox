@@ -182,7 +182,7 @@ export const EVENTS = [
     categoryLabel: 'eSports Events',
     type: 'Gaming',
     status: 'Register Now',
-    registrationLink: '',
+    registrationLink: 'https://event.funded.site/e/e-football-tournament',
     description: 'Dominate the virtual pitch in 1v1 tactical football showdowns. Prove your squad management and stick skills.',
     guidelines: [
   'Match duration is 8 minutes.',

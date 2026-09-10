@@ -11,7 +11,7 @@ import HackathonPage from './pages/HackathonPage';
 import ReviewPage from './pages/ReviewPage';
 import './index.css';
 import pdoxLogo from './assets/pdox.png';
-import loadVideo from './assets/load.mp4';
+
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -64,12 +64,10 @@ function App() {
             fadeOut ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          <video 
-            src={loadVideo} 
-            autoPlay 
-            muted 
-            playsInline 
-            className="w-64 max-w-full h-auto object-contain"
+          <img 
+            src={pdoxLogo} 
+            alt="Paradox Logo Loading"
+            className="w-24 sm:w-32 max-w-full h-auto object-contain animate-pulse drop-shadow-[0_0_20px_rgba(255,51,0,0.3)]"
           />
         </div>
       )}
