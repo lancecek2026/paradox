@@ -182,7 +182,7 @@ export const EVENTS = [
     categoryLabel: 'eSports Events',
     type: 'Gaming',
     status: 'Register Now',
-    registrationLink: '',
+    registrationLink: 'https://event.funded.site/e/e-football-tournament',
     description: 'Dominate the virtual pitch in 1v1 tactical football showdowns. Prove your squad management and stick skills.',
     guidelines: [
   'Match duration is 8 minutes.',
@@ -199,11 +199,11 @@ export const EVENTS = [
   'All players must strictly follow the above rules.',
   'The organizer’s decision will be final and binding in case of any dispute.'
 ],
-    date: '7/10/2025',
-    time: '10:00 AM - 02:00 PM',
-    venue: 'Gaming Arena / Seminar Hall',
-    prizePool: '3000',
-    posterUrl: 'https://paradox25.netlify.app/posters/debate.jpg',
+    date: '13,14&15',
+    time: 'To be announced by the coordinators',
+    venue: 'Hybrid',
+    prizePool: '800',
+    posterUrl: 'https://res.cloudinary.com/fv5qvnz9/image/upload/v1789056725/WhatsApp_Image_2026-09-10_at_9.37.01_PM.jpg',
     contacts: [
       { name: 'Aswin Ajayan', phone: '9037662883' },
       { name: 'Albin Josy', phone: '9778115077' }
