@@ -617,7 +617,7 @@ export const HACKATHON_EVENT = {
   registrationLink: '',
   description: 'Paranova is a 6-hour offline inter-college software hackathon. Develop innovative software solutions to real-world problems related to Sustainable Development Goals (SDGs).',
   guidelines: [
-    'Team size: 1 to 4 members. Inter-college teams allowed.',
+    'Team size: 2 to 4 members. Inter-college teams allowed.',
     'Only software projects are allowed. Hardware projects are not permitted.',
     'Registration and abstract submission are completely FREE.',
     'Abstract domains: Affordable & Clean Energy, Quality Education, Good Health & Well-Being.',

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HackathonNavbar from './components/HackathonNavbar';
 import Footer from './components/Footer';
@@ -14,21 +14,34 @@ import pdoxLogo from './assets/pdox.png';
 
 
 const ScrollToTop = () => {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, state } = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
+    let elementId = null;
+    
     if (hash) {
-      const elementId = hash.replace('#', '');
+      elementId = hash.replace('#', '');
+    } else if (state && state.scrollTo) {
+      elementId = state.scrollTo;
+    }
+
+    if (elementId) {
       const timer = setTimeout(() => {
         const element = document.getElementById(elementId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
+          // Clear state so it doesn't scroll again on un-related rerenders
+          if (state && state.scrollTo) {
+            navigate(pathname, { replace: true, state: { ...state, scrollTo: undefined } });
+          }
         }
       }, 100);
       return () => clearTimeout(timer);
     } else {
       window.scrollTo(0, 0);
     }
-  }, [pathname, hash]);
+  }, [pathname, hash, state, navigate]);
   return null;
 };
 
