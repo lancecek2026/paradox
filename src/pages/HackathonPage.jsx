@@ -118,7 +118,7 @@ const HackathonPage = () => {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-xs font-bold tracking-widest uppercase mb-5 sm:mb-6 md:mb-5"
           >
             <Flame className="w-4 h-4 text-[var(--color-primary)]" />
-            <span>8-Hour Non-Stop Hackathon</span>
+            <span>6-Hour Non-Stop Hackathon</span>
           </motion.div>
 
           <motion.h1 
@@ -210,7 +210,7 @@ const HackathonPage = () => {
               
               <div className="space-y-4 text-gray-300 leading-relaxed text-sm sm:text-base">
                 <p>
-                  Paranova is a 8-hour offline inter-college software hackathon conducted as part of PARADOX 2026. The hackathon challenges participants to develop innovative software solutions to real-world problems related to Sustainable Development Goals (SDGs).
+                  Paranova is a 6-hour offline inter-college software hackathon conducted as part of PARADOX 2026. The hackathon challenges participants to develop innovative software solutions to real-world problems related to Sustainable Development Goals (SDGs).
                 </p>
                 
                 <div className="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/10 mt-6">

@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import { db } from '../firebase';
 import { collection, doc, setDoc, onSnapshot, query, where, getDocs } from 'firebase/firestore';
-import { EVENTS } from '../data/eventsData';
+import { EVENTS, HACKATHON_EVENT } from '../data/eventsData';
 import GuidelinesModal from '../components/GuidelinesModal';
 
 const initialFormState = {
@@ -18,6 +18,9 @@ const initialFormState = {
   venue: '',
   prizePool: '',
   posterUrl: '',
+  description: '',
+  registrationLink: '',
+  guidelines: '', // String that we will split into array later
   contacts: [{ name: '', phone: '' }],
   customFields: [],
   registrationClosed: false
@@ -282,6 +285,9 @@ const AdminPage = () => {
       venue: event.venue || '',
       prizePool: event.prizePool || '',
       posterUrl: event.posterUrl || '',
+      description: event.description || '',
+      registrationLink: event.registrationLink || '',
+      guidelines: Array.isArray(event.guidelines) ? event.guidelines.join('\n') : (event.guidelines || ''),
       contacts: event.contacts && event.contacts.length > 0 ? event.contacts : [{ name: '', phone: '' }],
       customFields: event.customFields || [],
       registrationClosed: event.registrationClosed || false
@@ -392,6 +398,7 @@ const AdminPage = () => {
       
       const eventPayload = {
         ...formData,
+        guidelines: formData.guidelines ? formData.guidelines.split('\n').filter(g => g.trim() !== '') : [],
         id: targetId,
         category: formData.category || 'coding',
         categoryLabel: categoryLabels[formData.category] || 'Event',
@@ -414,7 +421,7 @@ const AdminPage = () => {
         const reviewLink = `${window.location.origin}/review/${targetId}`;
         const emailPayload = {
           type: 'email',
-          to: 'marypriyanka@ce-kgr.org', // Coordinator's email address
+          to: 'edwinjijo500@gmail.com', // Coordinator's email address
           subject: editingEventId ? `Event Edited Pending Approval: ${formData.title}` : `New Event Pending Approval: ${formData.title}`,
           body: editingEventId 
             ? `The event "${formData.title}" has been modified and requires your re-approval.\n\nReview it here: ${reviewLink}`
@@ -473,6 +480,54 @@ const AdminPage = () => {
       setAuthError('');
     } else {
       setAuthError('Invalid username or password');
+    }
+  };
+
+  const handleSyncFile = async () => {
+    // We only want to sync events that are not deleted and are approved.
+    const approvedEvents = allEvents.filter(e => e.id !== 'hackathon' && !e.deleted && (!e.approvalStatus || e.approvalStatus === 'approved'));
+    
+    // Sort them so they look neat in the file
+    approvedEvents.sort((a, b) => (a.number || 99) - (b.number || 99));
+
+    const eventsArrayString = JSON.stringify(approvedEvents, null, 2);
+    
+    // Fetch from Firebase customEvents if it exists there, else use the imported HACKATHON_EVENT
+    const hackathonEvent = allEvents.find(e => e.id === 'hackathon') || HACKATHON_EVENT;
+    const hackathonString = JSON.stringify(hackathonEvent, null, 2);
+
+    const fileContent = `export const CATEGORIES = [
+  { id: 'all', label: 'All Events', icon: 'Layers' },
+  { id: 'coding', label: 'Technical Events', icon: 'Code2' },
+  { id: 'esports', label: 'eSports Events', icon: 'Gamepad2' },
+  { id: 'general', label: 'General Events', icon: 'Sparkles' },
+];
+
+export const EVENTS = ${eventsArrayString.replace(/"([^(")"]+)":/g, "$1:")};
+
+export const HACKATHON_EVENT = ${hackathonString.replace(/"([^(")"]+)":/g, "$1:")};
+
+export const EVENTS_BY_ID = EVENTS.reduce((acc, event) => {
+  acc[event.id] = event;
+  return acc;
+}, { hackathon: HACKATHON_EVENT });
+`;
+
+    try {
+      const response = await fetch('/api/sync-events', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fileContent })
+      });
+      const result = await response.json();
+      if (result.success) {
+        setStatusMessage({ type: 'success', text: 'Successfully synced to eventsData.js!' });
+        setTimeout(() => setStatusMessage(null), 4000);
+      } else {
+        alert("Failed to sync: " + result.error);
+      }
+    } catch (err) {
+      alert("Sync failed. Ensure your local Vite dev server is running.");
     }
   };
 
@@ -577,14 +632,23 @@ const AdminPage = () => {
           </p>
         </div>
 
-        {editingEventId && activeTab === 'events' && (
+        <div className="flex items-center gap-3 self-start md:self-auto">
           <button
-            onClick={cancelEdit}
-            className="self-start md:self-auto flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider transition-all border border-white/10"
+            onClick={handleSyncFile}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider transition-all border border-blue-500/20"
           >
-            <RotateCcw className="w-3.5 h-3.5" /> Cancel Editing
+            <Download className="w-3.5 h-3.5" /> Sync to Local File
           </button>
-        )}
+          
+          {editingEventId && activeTab === 'events' && (
+            <button
+              onClick={cancelEdit}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider transition-all border border-white/10"
+            >
+              <RotateCcw className="w-3.5 h-3.5" /> Cancel Editing
+            </button>
+          )}
+        </div>
       </motion.div>
 
       {/* Tab Navigation */}
@@ -810,6 +874,45 @@ const AdminPage = () => {
                     className="w-full bg-black/50 border border-white/10 rounded-xl pl-11 pr-4 py-3.5 text-white font-medium focus:outline-none focus:border-[var(--color-primary)] transition-colors"
                   />
                 </div>
+              </div>
+
+              {/* Description */}
+              <div className="flex flex-col gap-2 md:col-span-2">
+                <label className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Description</label>
+                <textarea 
+                  name="description"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                  placeholder="Brief description of the event..."
+                  rows={3}
+                  className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3.5 text-white font-medium focus:outline-none focus:border-[var(--color-primary)] transition-colors resize-none"
+                />
+              </div>
+
+              {/* Guidelines */}
+              <div className="flex flex-col gap-2 md:col-span-2">
+                <label className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Guidelines (One per line)</label>
+                <textarea 
+                  name="guidelines"
+                  value={formData.guidelines}
+                  onChange={handleInputChange}
+                  placeholder="- Team size 2-4&#10;- Bring your own laptop..."
+                  rows={4}
+                  className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3.5 text-white font-medium focus:outline-none focus:border-[var(--color-primary)] transition-colors resize-none"
+                />
+              </div>
+
+              {/* Registration Link */}
+              <div className="flex flex-col gap-2 md:col-span-2">
+                <label className="text-gray-500 text-[10px] font-bold uppercase tracking-widest">External Registration Link (Optional)</label>
+                <input 
+                  type="text" 
+                  name="registrationLink"
+                  value={formData.registrationLink}
+                  onChange={handleInputChange}
+                  placeholder="e.g. https://forms.gle/... (Leave blank to use built-in registration)"
+                  className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3.5 text-white font-medium focus:outline-none focus:border-[var(--color-primary)] transition-colors"
+                />
               </div>
             </div>
 

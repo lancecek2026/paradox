@@ -1,0 +1,781 @@
+[
+  {
+    "id": "ai-workshop",
+    "prizePool": "",
+    "approvalStatus": "approved",
+    "time": "9:30 AM -3:30 PM",
+    "customFields": [],
+    "category": "general",
+    "contacts": [
+      {
+        "phone": "6235451179",
+        "name": "Amrutha Rajan"
+      },
+      {
+        "phone": "9495382335",
+        "name": "Akhilraj"
+      }
+    ],
+    "status": "Register Now",
+    "categoryLabel": "General Events",
+    "title": "PROMPTX",
+    "registrationClosed": false,
+    "venue": "ASAP HALL",
+    "type": "Hands on AI workshop",
+    "deleted": false,
+    "date": "14/09/2026",
+    "updatedAt": "2026-09-11T07:13:19.946Z",
+    "posterUrl": "https://res.cloudinary.com/fv5qvnz9/image/upload/v1789110754/ai.jpg"
+  },
+  {
+    "id": "alby",
+    "createdAt": "2026-09-01T16:50:03.962Z",
+    "title": "alby",
+    "prizePool": "20000",
+    "type": "konayadi",
+    "status": "Register Now",
+    "date": "7/9/2026",
+    "contacts": [
+      {
+        "name": "alby",
+        "phone": "7034850701"
+      }
+    ],
+    "deletedAt": "2026-09-02T15:07:54.971Z",
+    "deleted": true,
+    "venue": "csa s7",
+    "time": "9:00 AM-4:00 PM",
+    "posterUrl": ""
+  },
+  {
+    "id": "best-engineer",
+    "venue": "Main Stage / Seminar Hall",
+    "categoryLabel": "General Events",
+    "prizePool": "4000",
+    "status": "Register Now",
+    "type": "General Tech",
+    "date": "7/10/2025",
+    "category": "general",
+    "contacts": [
+      {
+        "name": "Jeswin ",
+        "phone": "9567692925      "
+      },
+      {
+        "phone": "8304855056",
+        "name": "Gayathri"
+      }
+    ],
+    "approvalStatus": "pending",
+    "registrationClosed": false,
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg",
+    "deleted": false,
+    "updatedAt": "2026-09-10T16:25:33.410Z",
+    "title": "BEST ENGINEER",
+    "time": "10:00 AM - 03:00 PM",
+    "customFields": []
+  },
+  {
+    "id": "blind-coding",
+    "approvalStatus": "pending",
+    "venue": "Computing Hub 1",
+    "status": "Register Now",
+    "time": "01:30 PM - 03:30 PM",
+    "categoryLabel": "Coding Events",
+    "prizePool": "2000",
+    "customFields": [],
+    "deleted": false,
+    "registrationClosed": false,
+    "posterUrl": "https://lh3.googleusercontent.com/d/1CSGdJBnR1TZHU105NunRj387-HXqY-56",
+    "type": "Coding",
+    "updatedAt": "2026-09-09T09:28:05.573Z",
+    "date": "7/10/2025",
+    "category": "coding",
+    "contacts": [
+      {
+        "name": "BHAVYA",
+        "phone": "7510695281"
+      }
+    ],
+    "title": "BLIND CODING"
+  },
+  {
+    "id": "bus",
+    "posterUrl": "https://lh3.googleusercontent.com/d/1pbxbEp3HAczMr3FVXD2kntPGCuwqWzkQ",
+    "customFields": [],
+    "updatedAt": "2026-09-09T08:42:28.182Z",
+    "venue": "ASAP Hall",
+    "date": "7/9/2026",
+    "status": "Register Now",
+    "registrationClosed": false,
+    "deletedAt": "2026-09-09T16:19:04.031Z",
+    "type": "Coding",
+    "approvalStatus": "pending",
+    "category": "coding",
+    "contacts": [
+      {
+        "phone": "",
+        "name": "edwin"
+      }
+    ],
+    "time": "9:00 AM-4:00 PM",
+    "title": "bus",
+    "prizePool": "600",
+    "categoryLabel": "Coding Events",
+    "deleted": true
+  },
+  {
+    "id": "c-challenge",
+    "category": "coding",
+    "contacts": [
+      {
+        "phone": "6282681915",
+        "name": "Gokila"
+      },
+      {
+        "name": "Hari",
+        "phone": "8078759239"
+      }
+    ],
+    "date": "7/10/2025",
+    "type": "Coding",
+    "deleted": false,
+    "categoryLabel": "Technical Events",
+    "title": "C CHALLENGE",
+    "prizePool": "14",
+    "customFields": [],
+    "registrationClosed": false,
+    "time": "10:00 AM - 12:30 PM",
+    "posterUrl": "https://lh3.googleusercontent.com/d/1rWHF7usLWJUTbd6JYdnV-W6l4_HmkPse",
+    "updatedAt": "2026-09-10T16:23:08.071Z",
+    "venue": "BC Lab / MM Lab",
+    "approvalStatus": "pending",
+    "status": "Register Now"
+  },
+  {
+    "id": "chess",
+    "prizePool": "20",
+    "deleted": true,
+    "customFields": [],
+    "categoryLabel": "Coding Events",
+    "registrationClosed": false,
+    "status": "Register Now",
+    "venue": "csa s7",
+    "approvalStatus": "approved",
+    "time": "9:00 AM-4:00 PM",
+    "title": "chess",
+    "deletedAt": "2026-09-09T02:17:19.062Z",
+    "category": "coding",
+    "contacts": [
+      {
+        "phone": "7034850701",
+        "name": "edwin"
+      }
+    ],
+    "type": "Test",
+    "updatedAt": "2026-09-09T07:41:19.265Z",
+    "date": "7/9/2026",
+    "posterUrl": ""
+  },
+  {
+    "id": "code-relay",
+    "venue": "BC Lab",
+    "type": "Coding",
+    "date": "7/10/2025",
+    "updatedAt": "2026-09-09T16:35:15.415Z",
+    "contacts": [
+      {
+        "name": "Ashik ",
+        "phone": "8547330803"
+      },
+      {
+        "name": "Sanju                                     ",
+        "phone": " 8281724561                                         "
+      }
+    ],
+    "category": "coding",
+    "posterUrl": "https://res.cloudinary.com/pfvatafs/image/upload/v1788668772/Screenshot_2026-09-06_095553_pcsgrq.png",
+    "categoryLabel": "Technical Events",
+    "time": "11:30 AM - 01:00 PM",
+    "customFields": [],
+    "prizePool": "2500",
+    "status": "Register Now",
+    "approvalStatus": "pending",
+    "deleted": false,
+    "title": "CODE RELAY",
+    "registrationClosed": false
+  },
+  {
+    "id": "crime-scene",
+    "category": "general",
+    "contacts": [
+      {
+        "name": "Akhilraj",
+        "phone": "9495382335"
+      },
+      {
+        "phone": "7736789331",
+        "name": "Basith Ahmed"
+      }
+    ],
+    "title": "CRIME SCENE INVESTIGATION",
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg",
+    "type": "Mystery",
+    "categoryLabel": "General Events",
+    "approvalStatus": "pending",
+    "updatedAt": "2026-09-10T16:25:39.967Z",
+    "status": "Register Now",
+    "customFields": [],
+    "date": "7/10/2025",
+    "prizePool": "3000",
+    "deleted": false,
+    "venue": "Investigation Lab (CSLH1)",
+    "time": "01:00 PM - 03:30 PM",
+    "registrationClosed": false
+  },
+  {
+    "id": "debate",
+    "time": "09:45 AM - 12:30 PM",
+    "category": "general",
+    "contacts": [
+      {
+        "phone": "8848608233",
+        "name": "Ajay Krishna AP"
+      },
+      {
+        "name": "Arya C Anish ",
+        "phone": "7592815138"
+      }
+    ],
+    "venue": "CSLH5(S7 CSE A), Main Stage",
+    "prizePool": "2000",
+    "deleted": false,
+    "registrationClosed": false,
+    "date": "7/10/2025",
+    "categoryLabel": "General Events",
+    "type": "Literary",
+    "approvalStatus": "pending",
+    "updatedAt": "2026-09-10T16:24:04.176Z",
+    "status": "Register Now",
+    "customFields": [],
+    "title": "DEBATE",
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg"
+  },
+  {
+    "id": "efootball",
+    "date": "13,14&15",
+    "type": "Gaming",
+    "updatedAt": "2026-09-10T16:17:26.558Z",
+    "venue": "Hybrid",
+    "categoryLabel": "eSports Events",
+    "posterUrl": "https://res.cloudinary.com/fv5qvnz9/image/upload/v1789056725/WhatsApp_Image_2026-09-10_at_9.37.01_PM.jpg",
+    "status": "Register Now",
+    "time": "To be announced by the coordinators",
+    "customFields": [],
+    "registrationClosed": false,
+    "title": "EFOOTBALL",
+    "prizePool": "800",
+    "contacts": [
+      {
+        "phone": "9037662883 ",
+        "name": "Aswin Ajayan"
+      },
+      {
+        "phone": "9778115077",
+        "name": "Albin Josy"
+      }
+    ],
+    "category": "esports",
+    "deleted": false,
+    "approvalStatus": "approved"
+  },
+  {
+    "id": "final-test",
+    "type": "Test",
+    "approvalStatus": "pending",
+    "date": "7/9/2026",
+    "venue": "Investigation Lab (CSLH1)",
+    "contacts": [
+      {
+        "name": "Edwin Jijo",
+        "phone": ""
+      }
+    ],
+    "category": "coding",
+    "registrationClosed": false,
+    "prizePool": "198",
+    "updatedAt": "2026-09-09T08:20:37.511Z",
+    "time": "01:30 PM - 03:30 PM",
+    "customFields": [],
+    "title": "final test",
+    "posterUrl": "https://drive.google.com/file/d/1tIxneK5Ma7rM88OA4Xv_yB7anDEDtmQ3/view?usp=drivesdk",
+    "categoryLabel": "Coding Events",
+    "deletedAt": "2026-09-09T08:22:13.155Z",
+    "status": "Register Now",
+    "deleted": true
+  },
+  {
+    "id": "free-fire",
+    "updatedAt": "2026-09-09T08:29:29.397Z",
+    "status": "Register Now",
+    "posterUrl": "https://drive.google.com/uc?export=view&id=1mymoYc7P29h0hTyPhzmB6b7PYWh396nY",
+    "venue": "csa s7",
+    "registrationClosed": false,
+    "deletedAt": "2026-09-09T08:29:02.611Z",
+    "deleted": true,
+    "date": "7/9/2026",
+    "type": "Coding",
+    "customFields": [],
+    "categoryLabel": "Coding Events",
+    "title": "free fire",
+    "time": "9:00 AM-4:00 PM",
+    "approvalStatus": "pending",
+    "category": "coding",
+    "contacts": [
+      {
+        "phone": "7034850701",
+        "name": "Edwin Jijo"
+      }
+    ],
+    "prizePool": "200"
+  },
+  {
+    "id": "grammar-error",
+    "deleted": true,
+    "deletedAt": "2026-09-09T01:39:06.023Z"
+  },
+  {
+    "id": "hackathon",
+    "updatedAt": "2026-09-07T08:22:09.838Z",
+    "registrationClosed": false,
+    "posterUrl": "",
+    "title": "Hackathon",
+    "deletedAt": "2026-09-08T13:48:50.686Z",
+    "categoryLabel": "Coding Events",
+    "category": "coding",
+    "contacts": [
+      {
+        "phone": "7034850701",
+        "name": "Sreenandan"
+      }
+    ],
+    "deleted": true,
+    "time": "9:00 AM-4:00 PM",
+    "customFields": [],
+    "venue": "ASAP Hall",
+    "status": "Register Now",
+    "type": "Coding",
+    "prizePool": "100000",
+    "date": "7/9/2026"
+  },
+  {
+    "id": "idea-pitching",
+    "prizePool": "3000",
+    "time": "01:30 PM - 03:30 PM",
+    "venue": "Conference Hall",
+    "category": "general",
+    "contacts": [
+      {
+        "name": "Grace Mary Thomas",
+        "phone": "8891254505                                    "
+      },
+      {
+        "phone": " 8547540739",
+        "name": " Soumya Mohan "
+      }
+    ],
+    "approvalStatus": "pending",
+    "title": "IDEA PITCHING",
+    "registrationClosed": false,
+    "deleted": false,
+    "date": "7/10/2025",
+    "categoryLabel": "General Events",
+    "updatedAt": "2026-09-10T16:25:19.983Z",
+    "status": "Register Now",
+    "type": "Ideation",
+    "customFields": [],
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg"
+  },
+  {
+    "id": "mini-militia",
+    "updatedAt": "2026-09-10T16:23:29.096Z",
+    "venue": "Student Lounge / Arena 2",
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg",
+    "time": "11:00 AM - 01:30 PM",
+    "approvalStatus": "pending",
+    "deleted": false,
+    "categoryLabel": "eSports Events",
+    "type": "Gaming",
+    "title": "MINI MILITIA",
+    "status": "Register Now",
+    "customFields": [],
+    "registrationClosed": false,
+    "contacts": [
+      {
+        "phone": "7306734566",
+        "name": "Dhanwanth Manoj "
+      }
+    ],
+    "category": "esports",
+    "date": "7/10/2025",
+    "prizePool": "2500"
+  },
+  {
+    "id": "pitch-product",
+    "category": "general",
+    "contacts": [
+      {
+        "phone": "9544971069        ",
+        "name": "Anna Alphonse Mani "
+      },
+      {
+        "phone": " 8590927649",
+        "name": " Annu Siby"
+      }
+    ],
+    "type": "Ideation",
+    "venue": "Seminar Hall 2",
+    "date": "7/10/2025",
+    "prizePool": "2500",
+    "title": "PITCH THE PRODUCT",
+    "updatedAt": "2026-09-10T16:26:06.408Z",
+    "approvalStatus": "pending",
+    "registrationClosed": false,
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg",
+    "status": "Register Now",
+    "customFields": [],
+    "time": "02:00 PM - 04:00 PM",
+    "categoryLabel": "General Events",
+    "deleted": false
+  },
+  {
+    "id": "poster-design",
+    "prizePool": "2000",
+    "status": "Register Now",
+    "date": "7/10/2025",
+    "title": "POSTER DESIGN",
+    "type": "Creative",
+    "registrationClosed": false,
+    "venue": "Design Studio / Multimedia Lab",
+    "categoryLabel": "General Events",
+    "category": "general",
+    "contacts": [
+      {
+        "name": " Niranjana M ",
+        "phone": " 8848776638\""
+      },
+      {
+        "name": "NAISHANA FATHIMA KS  ",
+        "phone": "8590675895 "
+      }
+    ],
+    "customFields": [],
+    "deleted": false,
+    "time": "01:00 PM - 03:00 PM",
+    "approvalStatus": "pending",
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg",
+    "updatedAt": "2026-09-10T16:25:56.079Z"
+  },
+  {
+    "id": "pubg",
+    "deleted": false,
+    "registrationClosed": false,
+    "approvalStatus": "approved",
+    "time": "9:00 AM-4:00 PM",
+    "title": "FREE FIRE",
+    "prizePool": "1500",
+    "updatedAt": "2026-09-11T13:07:57.150Z",
+    "posterUrl": "https://drive.google.com/thumbnail?id=1Z39szuidWZ2mCgGMjCaDqnruZTVWH7Fi&sz=w1200",
+    "venue": "ASAP Hall",
+    "category": "esports",
+    "contacts": [
+      {
+        "phone": "",
+        "name": "Sachu Sajeev"
+      },
+      {
+        "name": "Alen Jose",
+        "phone": ""
+      }
+    ],
+    "status": "Register Now",
+    "deletedAt": "2026-09-09T08:27:32.067Z",
+    "date": "15/9/2026",
+    "customFields": [],
+    "type": "Gaming",
+    "categoryLabel": "eSports Events"
+  },
+  {
+    "id": "python-debugging",
+    "posterUrl": "https://paradox25.netlify.app/_next/image?url=%2Fposters%2Fcchallenge.png&w=1920&q=75",
+    "updatedAt": "2026-09-10T16:23:18.392Z",
+    "title": "PYTHON DEBUGGING",
+    "time": "02:00 PM - 04:00 PM",
+    "contacts": [
+      {
+        "name": " Devika ",
+        "phone": " 9447207921"
+      },
+      {
+        "phone": "9074030625     ",
+        "name": "Swathy"
+      }
+    ],
+    "category": "coding",
+    "categoryLabel": "Technical Events",
+    "registrationClosed": false,
+    "type": "Debugging",
+    "date": "7/10/2025",
+    "customFields": [],
+    "venue": "Computing Hub 2",
+    "prizePool": "2000",
+    "approvalStatus": "pending",
+    "deleted": false,
+    "status": "Register Now"
+  },
+  {
+    "id": "quiz",
+    "category": "general",
+    "contacts": [
+      {
+        "phone": " 7736962141",
+        "name": "Aleena thomas"
+      },
+      {
+        "phone": "9656350185 ",
+        "name": "Anagha E D "
+      }
+    ],
+    "customFields": [],
+    "categoryLabel": "General Events",
+    "time": "10:30 AM - 12:30 PM",
+    "prizePool": "2000",
+    "venue": "Auditorium 2",
+    "updatedAt": "2026-09-10T16:25:05.136Z",
+    "title": "QUIZ",
+    "deleted": false,
+    "status": "Register Now",
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg",
+    "date": "7/10/2025",
+    "registrationClosed": false,
+    "approvalStatus": "pending",
+    "type": "Knowledge"
+  },
+  {
+    "id": "single-prompt",
+    "updatedAt": "2026-09-09T09:23:33.895Z",
+    "title": "SINGLE PROMPT",
+    "posterUrl": "https://lh3.googleusercontent.com/d/1ZVR-RbeY5x7sLQEwciqU7C2W5K-EsYW4",
+    "deleted": false,
+    "date": "7/10/2025",
+    "approvalStatus": "pending",
+    "type": "AI Prompting",
+    "category": "coding",
+    "contacts": [
+      {
+        "phone": "9633421639             ",
+        "name": "Shine P Ninan"
+      },
+      {
+        "name": "Aswin Gigi",
+        "phone": " 7034757701"
+      }
+    ],
+    "time": "11:00 AM - 01:00 PM",
+    "registrationClosed": false,
+    "status": "Register Now",
+    "customFields": [],
+    "prizePool": "2500",
+    "categoryLabel": "Coding Events",
+    "venue": "IP Lab"
+  },
+  {
+    "id": "speed-typing",
+    "categoryLabel": "General Events",
+    "registrationClosed": false,
+    "time": "09:45 AM - 11:30 AM",
+    "prizePool": "1500",
+    "venue": "IP Lab",
+    "type": "Typing",
+    "customFields": [],
+    "approvalStatus": "pending",
+    "date": "7/10/2025",
+    "title": "SPEED TYPING",
+    "updatedAt": "2026-09-10T16:23:56.904Z",
+    "category": "general",
+    "contacts": [
+      {
+        "phone": "88506257",
+        "name": "Nandana Suresh"
+      },
+      {
+        "name": "Ansila Husain",
+        "phone": " 6282797304"
+      }
+    ],
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg",
+    "status": "Register Now",
+    "deleted": false
+  },
+  {
+    "id": "spot-photography",
+    "customFields": [],
+    "registrationClosed": false,
+    "time": "10:00 AM - 02:00 PM",
+    "category": "general",
+    "contacts": [
+      {
+        "phone": "8891665532",
+        "name": "Niran tom "
+      }
+    ],
+    "venue": "Open Campus",
+    "prizePool": "2000",
+    "deleted": false,
+    "status": "Register Now",
+    "date": "7/10/2025",
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg",
+    "approvalStatus": "pending",
+    "updatedAt": "2026-09-10T16:25:11.079Z",
+    "type": "Creative",
+    "categoryLabel": "General Events",
+    "title": "SPOT PHOTOGRAPHY"
+  },
+  {
+    "id": "spot-ppt",
+    "prizePool": "2000",
+    "venue": "CSLH2",
+    "time": "11:30 AM - 01:30 PM",
+    "status": "Register Now",
+    "customFields": [],
+    "registrationClosed": false,
+    "category": "general",
+    "contacts": [
+      {
+        "phone": "9383402043",
+        "name": "Nishanth Abraham Koshy  "
+      },
+      {
+        "name": "Emil Elsa Biji ",
+        "phone": "7034704236 "
+      }
+    ],
+    "categoryLabel": "General Events",
+    "date": "7/10/2025",
+    "title": "SPOT PPT",
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg",
+    "type": "Presentation",
+    "deleted": false,
+    "approvalStatus": "pending",
+    "updatedAt": "2026-09-10T16:26:13.368Z"
+  },
+  {
+    "id": "test",
+    "venue": "",
+    "status": "Register Now",
+    "deletedAt": "2026-09-09T16:18:30.951Z",
+    "time": "",
+    "registrationClosed": false,
+    "categoryLabel": "Coding Events",
+    "contacts": [
+      {
+        "phone": "",
+        "name": ""
+      }
+    ],
+    "category": "coding",
+    "updatedAt": "2026-09-09T09:50:44.200Z",
+    "posterUrl": "https://lh3.googleusercontent.com/d/1BuJ-qHwRY6qFki9yFYk9Dd_kKAQkhuC2",
+    "approvalStatus": "approved",
+    "deleted": true,
+    "type": "execom",
+    "prizePool": "5200",
+    "customFields": [],
+    "date": "",
+    "title": "test"
+  },
+  {
+    "id": "treasure-hunt",
+    "type": "Mystery",
+    "prizePool": "3500",
+    "customFields": [],
+    "date": "7/10/2025",
+    "category": "general",
+    "contacts": [
+      {
+        "phone": "6282703442",
+        "name": "Ashitha Mary Chacko"
+      },
+      {
+        "phone": "8921182286 ",
+        "name": "Roshan Rajesh "
+      }
+    ],
+    "registrationClosed": false,
+    "status": "Register Now",
+    "title": "TREASURE HUNT",
+    "venue": "Campus Grounds",
+    "deleted": false,
+    "approvalStatus": "pending",
+    "time": "11:00 AM - 02:00 PM",
+    "updatedAt": "2026-09-10T16:24:20.496Z",
+    "categoryLabel": "General Events",
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg"
+  },
+  {
+    "id": "valorant",
+    "type": "Gaming",
+    "contacts": [
+      {
+        "phone": "6238877641 ",
+        "name": "Alen Jose"
+      },
+      {
+        "name": "Sachu Sajeev",
+        "phone": "8590205927\""
+      }
+    ],
+    "category": "esports",
+    "prizePool": "5000",
+    "date": "7/10/2025",
+    "deleted": true,
+    "customFields": [],
+    "title": "VALORANT",
+    "deletedAt": "2026-09-10T16:23:49.406Z",
+    "venue": "Main Esports Arena",
+    "time": "10:00 AM - 04:00 PM",
+    "updatedAt": "2026-09-08T15:48:47.075Z",
+    "status": "Register Now",
+    "categoryLabel": "eSports Events",
+    "registrationClosed": false,
+    "posterUrl": "https://paradox25.netlify.app/posters/debate.jpg"
+  },
+  {
+    "id": "web-development",
+    "posterUrl": "https://lh3.googleusercontent.com/d/1IRKxDN0an22roA_Q-1bYVvBwzSz72QWv",
+    "updatedAt": "2026-09-09T09:29:10.135Z",
+    "contacts": [
+      {
+        "name": "Gautham                                       ",
+        "phone": "9656534816  "
+      },
+      {
+        "phone": " 6238193288",
+        "name": "   Devu "
+      }
+    ],
+    "category": "coding",
+    "customFields": [],
+    "type": "Development",
+    "approvalStatus": "pending",
+    "venue": "Web Lab / CSLH4",
+    "date": "7/10/2025",
+    "registrationClosed": false,
+    "title": "WEB DEVELOPMENT",
+    "status": "Register Now",
+    "categoryLabel": "Coding Events",
+    "deleted": false,
+    "prizePool": "3000",
+    "time": "10:30 AM - 01:30 PM"
+  }
+]
