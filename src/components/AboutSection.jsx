@@ -116,10 +116,10 @@ const AboutSection = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-20 blur-2xl rounded-full"></div>
                 <div className="relative z-10">
                   <div className="flex justify-between items-start mb-6">
-                    <div className="text-[10px] font-bold text-white/80 uppercase tracking-widest border border-white/20 px-2 py-1 rounded">Paradox Fact</div>
-                    <div className="text-[10px] text-white/80">14/09</div>
+                    <div className="text-[10px] font-bold text-white/80 uppercase tracking-widest border border-white/20 px-2 py-1 rounded">Hackathon</div>
+                    <div className="text-[10px] text-white/80">17/09</div>
                   </div>
-                  <div className="text-5xl font-sans font-bold text-white mb-2">6h</div>
+                  <div className="text-5xl font-sans font-bold text-white mb-2">8h</div>
                   <div className="text-xs text-white/90 leading-relaxed">
                     Non-stop coding and innovation in our flagship hackathon event.
                   </div>
