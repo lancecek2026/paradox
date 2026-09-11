@@ -10,6 +10,19 @@ const HackathonNavbar = () => {
   const lastScrollY = React.useRef(0);
   const ticking = React.useRef(false);
 
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    if (targetId) {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (!ticking.current) {
@@ -63,12 +76,14 @@ const HackathonNavbar = () => {
           
           {/* Center: Hackathon Navigation Pill Container */}
           <div className="hidden lg:flex items-center bg-white/5 border border-white/10 rounded-xl p-1.5 gap-1 backdrop-blur-md">
-            <a href="#tracks" className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Tracks</a>
-            <a href="#details" className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Details</a>
-            <a href="#schedule" className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Schedule</a>
-            <a href="#prizes" className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Prizes</a>
-            <a href="#rules" className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Rules</a>
-            <a href="#contact" className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Contact</a>
+            <a href="#" onClick={(e) => handleNavClick(e, '')} className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Home</a>
+            <a href="#" onClick={(e) => handleNavClick(e, 'about')} className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">About</a>
+            <a href="#" onClick={(e) => handleNavClick(e, 'tracks')} className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Tracks</a>
+            <a href="#" onClick={(e) => handleNavClick(e, 'process')} className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Details</a>
+            <a href="#" onClick={(e) => handleNavClick(e, 'schedule')} className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Schedule</a>
+            <a href="#" onClick={(e) => handleNavClick(e, 'prizes')} className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Prizes</a>
+            <a href="#" onClick={(e) => handleNavClick(e, 'rules')} className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Rules</a>
+            <a href="#" onClick={(e) => handleNavClick(e, 'contact')} className="font-sans font-medium text-[13px] text-gray-300 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all tracking-wide">Contact</a>
           </div>
 
           {/* Right: Back to Paradox Link (No Register Now Button) */}
@@ -129,27 +144,27 @@ const HackathonNavbar = () => {
 
             {/* Links */}
             <div className="flex flex-col gap-3">
-              <a href="#tracks" onClick={() => setIsOpen(false)} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
+              <a href="#" onClick={(e) => handleNavClick(e, 'tracks')} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
                 <span className="font-sans text-base font-medium text-white tracking-wide">TRACKS</span>
                 <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-white transition-colors" />
               </a>
-              <a href="#details" onClick={() => setIsOpen(false)} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
+              <a href="#" onClick={(e) => handleNavClick(e, 'details')} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
                 <span className="font-sans text-base font-medium text-white tracking-wide">DETAILS</span>
                 <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-white transition-colors" />
               </a>
-              <a href="#schedule" onClick={() => setIsOpen(false)} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
+              <a href="#" onClick={(e) => handleNavClick(e, 'schedule')} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
                 <span className="font-sans text-base font-medium text-white tracking-wide">SCHEDULE</span>
                 <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-white transition-colors" />
               </a>
-              <a href="#prizes" onClick={() => setIsOpen(false)} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
+              <a href="#" onClick={(e) => handleNavClick(e, 'prizes')} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
                 <span className="font-sans text-base font-medium text-white tracking-wide">PRIZES</span>
                 <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-white transition-colors" />
               </a>
-              <a href="#rules" onClick={() => setIsOpen(false)} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
+              <a href="#" onClick={(e) => handleNavClick(e, 'rules')} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
                 <span className="font-sans text-base font-medium text-white tracking-wide">RULES</span>
                 <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-white transition-colors" />
               </a>
-              <a href="#contact" onClick={() => setIsOpen(false)} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
+              <a href="#" onClick={(e) => handleNavClick(e, 'contact')} className="flex items-center justify-between bg-[var(--color-bg-dark)] border border-white/5 rounded-2xl px-6 py-3.5 group hover:border-[var(--color-primary)] transition-colors">
                 <span className="font-sans text-base font-medium text-white tracking-wide">CONTACT</span>
                 <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-white transition-colors" />
               </a>

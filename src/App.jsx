@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HackathonNavbar from './components/HackathonNavbar';
 import Footer from './components/Footer';
@@ -11,24 +11,37 @@ import HackathonPage from './pages/HackathonPage';
 import ReviewPage from './pages/ReviewPage';
 import './index.css';
 import pdoxLogo from './assets/pdox.png';
-import loadVideo from './assets/load.mp4';
+
 
 const ScrollToTop = () => {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, state } = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
+    let elementId = null;
+    
     if (hash) {
-      const elementId = hash.replace('#', '');
+      elementId = hash.replace('#', '');
+    } else if (state && state.scrollTo) {
+      elementId = state.scrollTo;
+    }
+
+    if (elementId) {
       const timer = setTimeout(() => {
         const element = document.getElementById(elementId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
+          // Clear state so it doesn't scroll again on un-related rerenders
+          if (state && state.scrollTo) {
+            navigate(pathname, { replace: true, state: { ...state, scrollTo: undefined } });
+          }
         }
       }, 100);
       return () => clearTimeout(timer);
     } else {
       window.scrollTo(0, 0);
     }
-  }, [pathname, hash]);
+  }, [pathname, hash, state, navigate]);
   return null;
 };
 
@@ -64,12 +77,10 @@ function App() {
             fadeOut ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          <video 
-            src={loadVideo} 
-            autoPlay 
-            muted 
-            playsInline 
-            className="w-64 max-w-full h-auto object-contain"
+          <img 
+            src={pdoxLogo} 
+            alt="Paradox Logo Loading"
+            className="w-24 sm:w-32 max-w-full h-auto object-contain animate-pulse drop-shadow-[0_0_20px_rgba(255,51,0,0.3)]"
           />
         </div>
       )}

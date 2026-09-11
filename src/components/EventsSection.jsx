@@ -227,9 +227,9 @@ const EventsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex justify-center mb-12 md:mb-16"
+          className="flex justify-center mb-12 md:mb-16 w-full px-2 sm:px-0"
         >
-          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 p-1.5 bg-black/40 border border-white/10 rounded-full backdrop-blur-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+          <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-2 md:gap-3 p-2 bg-black/40 border border-white/10 rounded-3xl md:rounded-full backdrop-blur-2xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] w-full md:w-auto">
             {CATEGORIES.map((cat) => {
               const Icon = iconMap[cat.icon] || Layers;
               const isActive = activeCategory === cat.id;
@@ -241,16 +241,16 @@ const EventsSection = () => {
                   onClick={() => {
                     setActiveCategory(cat.id);
                   }}
-                  className={`relative flex items-center gap-2.5 px-4 md:px-6 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-all duration-300 select-none ${
+                  className={`relative flex items-center justify-center gap-1.5 md:gap-2.5 px-2 md:px-6 py-2.5 md:py-2.5 rounded-full text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide transition-all duration-300 select-none w-full md:w-auto ${
                     isActive
                       ? 'bg-[var(--color-primary)] text-white shadow-[0_0_25px_rgba(255,51,0,0.45)]'
                       : 'text-gray-400 hover:text-white hover:bg-white/[0.06]'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 transition-transform duration-300 ${isActive ? 'scale-110' : ''}`} />
-                  <span>{cat.label}</span>
+                  <Icon className={`w-3.5 h-3.5 md:w-4 md:h-4 transition-transform duration-300 flex-shrink-0 ${isActive ? 'scale-110' : ''}`} />
+                  <span className="truncate">{cat.label}</span>
                   <span 
-                    className={`px-2 py-0.5 rounded-full text-[10px] font-bold tracking-tight transition-colors ${
+                    className={`px-1.5 md:px-2 py-0.5 rounded-full text-[9px] md:text-[10px] font-bold tracking-tight transition-colors flex-shrink-0 ${
                       isActive 
                         ? 'bg-black/30 text-white' 
                         : 'bg-white/10 text-gray-400 group-hover:text-white'
