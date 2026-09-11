@@ -65,7 +65,7 @@ const TIMELINE = [
 ];
 
 const RULES = [
-  'Team size: 1–4 members. Inter-college teams are allowed. Participants can only be part of one team.',
+  'Team size: 2–4 members. Inter-college teams are allowed. Participants can only be part of one team.',
   'Registration and abstract submission are completely FREE.',
   'Only up to 15 teams will be shortlisted based on abstract evaluation.',
   'Shortlisted teams must pay a mandatory ₹50 per participant charge (covers refreshments, lunch is separate).',
@@ -287,7 +287,7 @@ const HackathonPage = () => {
             </div>
             
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
-              Registration <span className="text-[var(--color-primary)]"></span>
+              Registration  <span className="text-[var(--color-primary)]"></span>
             </h2>
             
             <div className="space-y-4 text-gray-300 leading-relaxed text-sm sm:text-base">

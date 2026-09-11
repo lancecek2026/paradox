@@ -623,24 +623,25 @@ export const EVENTS = [
   {
     id: 'ai-workshop',
     number: 23,
-    title: 'AI WORKSHOP',
-    category: 'coding',
-    categoryLabel: 'Technical Events',
+    title: 'PROMPTX',
+    category: 'Workshop',
+    categoryLabel: 'General Events',
     type: 'Workshop',
     status: 'Register Now',
     registrationLink: 'https://event.funded.site/e/paradox-workshop',
     description: 'An immersive workshop covering the fundamentals of Artificial Intelligence and its practical applications.',
     guidelines: [
-      'Open for all interested students.',
+      'Laptop is mandatory.',
       'Participants must bring their own laptops.',
       'No prior AI experience required.'
     ],
-    date: '7/10/2025',
-    time: '10:00 AM - 04:00 PM',
-    venue: 'To be announced',
-    posterUrl: 'https://res.cloudinary.com/pfvatafs/image/upload/v1784354760/Screenshot_2026-07-18_113549_jsx2gb.png',
+    date: '14/09/2026',
+    time: '9:30 AM -3:30 PM',
+    venue: 'ASAP Hall',
+    posterUrl: 'https://res.cloudinary.com/fv5qvnz9/image/upload/v1789101629/AI_Workshop.jpg',
     contacts: [
-      { name: 'Coordinator', phone: '9876543210' }
+      { name: 'Amrutha Rajan', phone: '6235451179' },
+      { name: 'Akhilraj', phone: '9495382335' },
     ]
   }
 ];
