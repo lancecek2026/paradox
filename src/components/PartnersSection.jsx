@@ -7,7 +7,7 @@ import l4 from '../assets/l4.jpeg';
 import l5 from '../assets/l5.png';
 import l6 from '../assets/l6.png';
 import l7 from '../assets/l7.png';
-import l8 from '../assets/l8.jpeg';
+import l8 from '../assets/l8.png';
 
 const otherSponsors = [
   { id: 3, logo: l2, role: 'GAMING PARTNER', name: 'APX KOTTAYAM' },

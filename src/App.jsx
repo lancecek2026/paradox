@@ -80,7 +80,7 @@ function App() {
           <img 
             src={pdoxLogo} 
             alt="Paradox Logo Loading"
-            className="w-24 sm:w-32 max-w-full h-auto object-contain animate-pulse drop-shadow-[0_0_20px_rgba(255,51,0,0.3)]"
+            className="w-24 sm:w-32 max-w-full h-auto object-contain origin-center animate-[spin_3s_linear_infinite] drop-shadow-[0_0_20px_rgba(255,51,0,0.3)]"
           />
         </div>
       )}

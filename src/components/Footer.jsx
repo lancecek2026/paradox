@@ -45,8 +45,7 @@ const Footer = () => {
             <h3 className="text-sm font-semibold tracking-wide text-white">Follow Us</h3>
             <div className="flex flex-row gap-4">
               <a href="https://www.instagram.com/lance_cek?stkn=NWgxeXZveDdvcnBx" className="text-gray-400 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">Instagram</a>
-              <a href="#" className="text-gray-400 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">LinkedIn</a>
-              <a href="#" className="text-gray-400 hover:text-[var(--color-primary)] transition-colors text-sm font-medium">Twitter</a>
+             
             </div>
           </div>
           
