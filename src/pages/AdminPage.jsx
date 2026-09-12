@@ -421,7 +421,7 @@ const AdminPage = () => {
         const reviewLink = `${window.location.origin}/review/${targetId}`;
         const emailPayload = {
           type: 'email',
-          to: 'edwinjijo500@gmail.com', // Coordinator's email address
+          to: 'marypriyanka@ce-kgr.org', // Coordinator's email address
           subject: editingEventId ? `Event Edited Pending Approval: ${formData.title}` : `New Event Pending Approval: ${formData.title}`,
           body: editingEventId 
             ? `The event "${formData.title}" has been modified and requires your re-approval.\n\nReview it here: ${reviewLink}`
