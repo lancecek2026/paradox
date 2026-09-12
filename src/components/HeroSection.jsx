@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import bgImage from '../assets/bg.png'; // Use bg.png since bg.jpg doesn't exist
+import tLogo from '../assets/t.png';
 
 const HeroSection = () => {
   return (
@@ -24,23 +25,26 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-start text-left w-full max-w-4xl"
         >
-          {/* Glass Badge: Department */}
-          <div className="inline-flex items-center gap-2 sm:gap-2.5 px-2 py-2 sm:px-4 sm:py-2 rounded-full glass-badge mb-4 sm:mb-5">
-            <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] shadow-[0_0_10px_var(--color-primary)] animate-pulse shrink-0"></span>
-            <span className="text-gray-300 font-sans text-xs font-semibold tracking-widest uppercase leading-snug max-w-[240px] sm:max-w-none">
-              Department of Computer Science & Engineering
-            </span>
-          </div>
+          <div className="flex flex-col w-fit">
+            {/* Department Logo */}
+            <div className="-mb-0 sm:-mb-1 self-start relative z-10 cursor-pointer">
+              <img 
+                src={tLogo} 
+                alt="Department Logo" 
+                className="h-4 sm:h-5 md:h-7 w-auto object-contain transition-all duration-300 hover:scale-[1.15] hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+              />
+            </div>
 
-          {/* Main Headline: PARADOX 2026 */}
-          <h1 className="tracking-tighter leading-[0.9] select-none">
-            <span className="block font-sans font-bold text-[3.75rem] sm:text-7xl md:text-7xl lg:text-[6.5rem] xl:text-[7rem] tracking-tighter text-white">
-              Paradox
-            </span>
-            <span className="block mt-1 text-[3.25rem] sm:text-6xl md:text-6xl lg:text-[5.5rem] xl:text-[6rem] font-sans font-semibold text-[var(--color-primary)] tracking-tighter pr-4">
-              2026
-            </span>
-          </h1>
+            {/* Main Headline: PARADOX 2026 */}
+            <h1 className="tracking-tighter leading-[0.9] select-none text-left">
+              <span className="block font-sans font-bold text-[3.75rem] sm:text-7xl md:text-7xl lg:text-[6.5rem] xl:text-[7rem] tracking-tighter text-white">
+                Paradox
+              </span>
+              <span className="block mt-1 text-[3.25rem] sm:text-6xl md:text-6xl lg:text-[5.5rem] xl:text-[6rem] font-sans font-semibold text-[var(--color-primary)] tracking-tighter pr-4">
+                2026
+              </span>
+            </h1>
+          </div>
 
           <div className="mt-3 sm:mt-4 flex flex-col font-sans font-bold tracking-tighter uppercase select-none">
             <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white leading-none">

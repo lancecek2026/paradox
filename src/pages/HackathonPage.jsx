@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import { HACKATHON_EVENT } from '../data/eventsData';
 import Countdown from '../components/Countdown';
+import HackathonPartnersSection from '../components/HackathonPartnersSection';
 
 const TRACKS = [
   {
@@ -729,9 +730,11 @@ const HackathonPage = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-
           </div>
         </div>
+
+        {/* Partners Section */}
+        <HackathonPartnersSection />
 
         {/* Final Registration Banner CTA */}
         <motion.div 
