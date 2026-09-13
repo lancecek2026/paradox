@@ -305,6 +305,22 @@ const AdminPage = () => {
     setImageFile(null);
   };
 
+  const handleApproveEvent = async (event) => {
+    try {
+      await setDoc(doc(db, "customEvents", event.id), {
+        id: event.id,
+        approvalStatus: 'approved',
+        updatedAt: new Date().toISOString()
+      }, { merge: true });
+
+      setStatusMessage({ type: 'success', text: `Event "${event.title}" was successfully approved!` });
+      setTimeout(() => setStatusMessage(null), 4000);
+    } catch (error) {
+      console.error("Error approving event:", error);
+      alert("Could not approve event: " + error.message);
+    }
+  };
+
   const handleDeleteEvent = async (event) => {
     const isConfirmed = window.confirm(`Are you sure you want to delete "${event.title}"?\nThis will remove the event from the site.`);
     if (!isConfirmed) return;
@@ -1187,7 +1203,18 @@ export const EVENTS_BY_ID = EVENTS.reduce((acc, event) => {
                   </div>
 
                   {/* Actions: Guidelines, Edit & Delete Buttons */}
-                  <div className="pt-3 border-t border-white/5 flex items-center justify-between gap-2">
+                  <div className="pt-3 border-t border-white/5 flex flex-wrap items-center justify-between gap-2">
+                    {event.approvalStatus === 'pending' && (
+                      <button
+                        onClick={() => handleApproveEvent(event)}
+                        className="flex-1 flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-green-500/10 hover:bg-green-500/20 text-green-400 border border-green-500/20 hover:border-green-500/40 transition-all"
+                        title="Approve event"
+                      >
+                        <Check className="w-3.5 h-3.5" />
+                        Approve
+                      </button>
+                    )}
+
                     <button
                       type="button"
                       onClick={() => setViewingGuidelinesEvent(event)}
