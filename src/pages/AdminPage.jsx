@@ -428,8 +428,8 @@ const AdminPage = () => {
       // Save to Firestore CustomEvents collection
       await withTimeout(
         setDoc(doc(db, "customEvents", targetId), eventPayload, { merge: true }),
-        6000,
-        "Database save timed out. Your connection to Firebase might be blocked!"
+        15000,
+        "Database save timed out. Your connection to Firebase might be blocked or your network is slow!"
       );
 
       const actionText = editingEventId ? "updated" : "added";
