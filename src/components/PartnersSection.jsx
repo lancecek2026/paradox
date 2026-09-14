@@ -8,10 +8,14 @@ import l5 from '../assets/l5.png';
 import l6 from '../assets/l6.png';
 import l7 from '../assets/l7.png';
 import l8 from '../assets/l8.png';
+import l9 from '../assets/l9.png';
+import l10 from '../assets/l10.png';
 
 const otherSponsors = [
   { id: 3, logo: l2, role: 'GAMING PARTNER', name: 'APX KOTTAYAM' },
-  { id: 5, logo: l6, role: 'TECH PARTNER', name: 'AL AJMI' }
+  { id: 5, logo: l6, role: 'SPONSER', name: 'AL AJMI' },
+  { id: 10, logo: l10, role: 'SPONSER', name: 'RENERGY' },
+  { id: 9, logo: l9, role: 'SPONSER', name: 'STAR PRINTERS' }
 ];
 
 const partners = [
@@ -147,7 +151,7 @@ const PartnersSection = () => {
         </div>
 
         {/* Other Sponsors (APX & KERAKERALA) */}
-        <div className="mb-16 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-6 lg:gap-8 justify-center items-center justify-items-center max-w-2xl mx-auto">
+        <div className="mb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 lg:gap-8 justify-center items-center justify-items-center max-w-6xl mx-auto">
           {otherSponsors.map((partner, index) => (
             <motion.div
               key={partner.id}

@@ -116,10 +116,10 @@ const HackathonPage = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-xs font-bold tracking-widest uppercase mb-5 sm:mb-6 md:mb-5"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/10 text-[var(--color-primary)] tracking-widest uppercase mb-5 sm:mb-6 md:mb-5"
           >
-            <Flame className="w-4 h-4 text-[var(--color-primary)]" />
-            <span>8-Hour Non-Stop Hackathon</span>
+            <span className="text-[10px] lowercase opacity-80 font-medium tracking-normal">powered by</span>
+            <span className="text-xs font-bold">AWIS WORLDWIDE KOTTAYAM</span>
           </motion.div>
 
           <motion.h1 
@@ -629,6 +629,9 @@ const HackathonPage = () => {
           </div>
         </div>
 
+        {/* Partners Section */}
+        <HackathonPartnersSection />
+
         {/* Contact Information Section */}
         <div id="contact" className="scroll-mt-28 mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -733,8 +736,6 @@ const HackathonPage = () => {
           </div>
         </div>
 
-        {/* Partners Section */}
-        <HackathonPartnersSection />
 
         {/* Final Registration Banner CTA */}
         <motion.div 
