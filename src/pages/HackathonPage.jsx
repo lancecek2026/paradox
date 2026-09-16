@@ -62,7 +62,7 @@ const TIMELINE = [
   { time: '01:15 PM - 03:00 PM', title: 'Development Ends / Final Submission', desc: 'Final development sprint and submission.' },
   { time: '03:00 PM - 03:15 PM', title: 'Tea Break', desc: 'Short break for refreshments.' },
   { time: '03:15 PM - 04:00 PM', title: 'Individual Project Review', desc: 'Judges interact with teams to review working prototypes (No formal pitch).' },
-  { time: '04:00 PM', title: 'Hackathon Concludes', desc: 'End of the event.' }
+  { time: '05:00 PM', title: 'Hackathon Concludes', desc: 'End of the event.' }
 ];
 
 const RULES = [
