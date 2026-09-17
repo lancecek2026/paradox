@@ -490,7 +490,7 @@ const HackathonPage = () => {
                 <div>
                   <strong className="text-white block mb-2">Evaluation Criteria:</strong>
                   <ul className="space-y-1.5 ml-1">
-                    {['Relevance to Challenge', 'Functionality / Working Prototype', 'Innovation & Creativity', 'Technical Implementation', 'Usability / User Experience', 'Impact & Practical Applicability'].map((item, i) => (
+                    {['Relevance to Challenge', 'Functionality / Working Prototype', 'Innovation & Creativity', 'Technical Implementation', 'Usability / User Experience', 'Impact & Practical Applicability','Demo Readiness / Live Testing'].map((item, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <CheckCircle2 className="w-4 h-4 text-[var(--color-primary)] mt-1 shrink-0" />
                         <span>{item}</span>
